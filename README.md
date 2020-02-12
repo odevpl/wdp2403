@@ -3,14 +3,6 @@
 
 # WDP Projekt Zespołowy
 
-## Opis projektu
-
-DO UZUPEŁNIENIA
-
-## Demo
-
-DO UZUPEŁNIENIA
-
 ## Inicjacja projektu
 
 Po sklonowaniu projektu, zainstaluj wymagane paczki komendą `yarn install` (lub `npm install`).
@@ -36,6 +28,3 @@ Projekt korzysta z Git Hooks - możliwości uruchamiania skryptów w reakcji na 
 Za każdym razem gdy wykonasz komendę `git commit` zostaną uruchomione testy jednostkowe, formatowanie oraz lintowanie
 dla plików, które zostały wybrane za pomocą `git add` i mają być zapisane w commicie.
 
-## Konwencje i dobre praktyki
-
-DO UZUPEŁNIENIA
