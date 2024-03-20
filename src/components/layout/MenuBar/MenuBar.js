@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import ProductSearch from '../../features/ProductSearch/ProductSearch';
 
 import styles from './MenuBar.module.scss';
+import { NavLink } from 'react-router-dom/cjs/react-router-dom.min';
 
 const MenuBar = ({ children }) => (
   <div className={styles.root}>
@@ -15,27 +16,60 @@ const MenuBar = ({ children }) => (
         <div className={'col-auto ' + styles.menu}>
           <ul>
             <li>
-              <a href='#' className={styles.active}>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to='/'
+              >
                 Home
-              </a>
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Furniture</a>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to='/shop/furniture'
+              >
+                Furniture
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Chair</a>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to='/shop/chair'
+              >
+                Chair
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Table</a>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to='/shop/table'
+              >
+                Table
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Sofa</a>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to='/shop/sofa'
+              >
+                Sofa
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Bedroom</a>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to='/shop/bedroom'
+              >
+                Bedroom
+              </NavLink>
             </li>
             <li>
-              <a href='#'>Blog</a>
+              <NavLink
+                className={({ isActive }) => (isActive ? styles.active : undefined)}
+                to='/blog '
+              >
+                Blog
+              </NavLink>
             </li>
           </ul>
         </div>
