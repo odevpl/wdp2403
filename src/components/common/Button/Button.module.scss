@@ -4,15 +4,15 @@
 // }
 
 .main {
-  background-color: #2a2a2a;
-  color: #ffffff;
+  background-color: $button-background;
+  color: $white;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
   padding: 10px 30px;
 
   &:not(.noHover):hover {
-    color: #ffffff !important;
+    color: $white !important;
     background-color: $primary;
     text-decoration: none;
   }
@@ -30,12 +30,12 @@
   display: inline-block;
   padding: 5px 10px;
   border: 1px solid #2a2a2a;
-  color: #2a2a2a;
+  color: $button-icon;
   font-size: 13px;
   line-height: 22px;
 
   &:not(.noHover):hover {
-    background-color: #2a2a2a;
-    color: #ffffff;
+    background-color: $button-icon-hover;
+    color: $white;
   }
 }

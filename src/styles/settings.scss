@@ -1,13 +1,56 @@
+/* Variable Colors - DO NOT USE OUTSIDE THIS FILE */
+
+$orange: #d58e32;
+
+$darkBlack: #292929;
+$black: #2a2a2a;
+
+$darkGrey: #363636;
+$grey: #434343;
+$lightGrey: #b6b6b6;
+$veryLightGrey:#e1e1e1;
+$superLightGrey: #e2e2e2;
+$white: #ffffff;
+$lightGrayishBlue: #f4f5f7;
+$transparent: transparent;
+/* VARIABLES TO USE IN COMPONENTS */
+
+$header-topbar-bg: $grey;
+$header-bg: $darkGrey;
+
+$footer-claim-bg: $black;
+$footer-bg: $darkGrey;
+
+$primary: $orange;
+
+$text-color: $black;
+
+$form-border-color: $darkBlack;
+
 $base-padding: 24px;
 
-$header-topbar-bg: #434343;
-$header-bg: #363636;
+/* Button */
+$button-text: $white;
+$button-background: $black;
+$button-icon: $black;
+$button-icon-hover: $black;
+$button-icon-border: $black;
 
-$footer-claim-bg: #2a2a2a;
-$footer-bg: #363636;
+/* FeatureBox */
+$feature-box-border: $lightGrey;
+$feature-box-icon: $white;
+$feature-box-background: $white;
 
-$primary: #d58e32;
+/* ProductBox */
+$productbox-border: $veryLightGrey;
+$productbox-background: $white;
+$productbox-background: $white;
+$productbox-background-photo: $lightGrayishBlue;
+$productbox-sale: $darkBlack;
+$productbox-sale-text: $white;
+$productbox-line: $black;
 
-$text-color: #2a2a2a;
-
-$form-border-color: #292929;
+/* NewFurniture */
+$furniture-line: $superLightGrey;
+$furniture-list-background: $white;
+$furniture-list-dott: $veryLightGrey;
