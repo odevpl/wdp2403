@@ -66,7 +66,7 @@ const MenuBar = ({ children }) => (
             <li>
               <NavLink
                 className={({ isActive }) => (isActive ? styles.active : undefined)}
-                to='/blog '
+                to='/blog'
               >
                 Blog
               </NavLink>
