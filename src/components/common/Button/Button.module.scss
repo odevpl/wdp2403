@@ -5,7 +5,7 @@
 
 .main {
   background-color: $button-background;
-  color: $white;
+  color: $button-text;
   font-size: 16px;
   line-height: 24px;
   font-weight: 600;
@@ -29,13 +29,13 @@
 .outline {
   display: inline-block;
   padding: 5px 10px;
-  border: 1px solid #2a2a2a;
+  border: 1px solid $button-icon-border;
   color: $button-icon;
   font-size: 13px;
   line-height: 22px;
 
   &:not(.noHover):hover {
     background-color: $button-icon-hover;
-    color: $white;
+    color: $button-text;
   }
 }
