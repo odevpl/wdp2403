@@ -12,6 +12,11 @@
     display: flex;
     align-self: stretch;
 
+    .burger{
+      display: none;
+      width: 53px;
+    }
+
     ul {
       margin: 0;
       padding: 0;
@@ -46,6 +51,52 @@
 
       &.active {
         border-color: $text-color;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .root {
+    :global(.container) > :global(.row) {
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .root {
+    .menu{
+      position: relative;
+
+      .burger{
+        display:inline-block;
+        border: none;
+        &:hover{
+          color: #ffffff;
+          background-color: $primary;
+          border: none;
+        }
+      }
+      ul{
+        display: none;
+        position: absolute;
+        right: 15px;
+        top: 53px;
+        flex-direction: column;
+        z-index: 1;
+
+        &.show{
+          display: flex;
+        }
+        li{
+          display: block;
+          a {
+            color:#ffffff;
+            background-color: $text-color;
+          }
+        }
       }
     }
   }
