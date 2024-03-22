@@ -38,6 +38,7 @@
 
       &:hover,
       &.active {
+        @extend %hover-effects;
         background-color: $primary;
         color: $menubar-hover-active-text;
         border-color: $primary;
