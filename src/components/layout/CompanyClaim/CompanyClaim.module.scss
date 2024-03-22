@@ -70,3 +70,14 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .root {
+    .phoneNumber {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
+}
