@@ -30,7 +30,7 @@
     }
 
     a {
-      color: $text-color;
+      color: $menubar-text-black;
       text-transform: uppercase;
       font-size: 12px;
       padding: 1rem;
@@ -44,13 +44,13 @@
       &:hover,
       &.active {
         @extend %hover-effects;
-        background-color: $primary;
+        background-color: $menubar-background-hover;
         color: $menubar-hover-active-text;
-        border-color: $primary;
+        border-color: $menubar-background-hover;
       }
 
       &.active {
-        border-color: $text-color;
+        border-color: $menubar-shadow;
       }
     }
   }
@@ -74,8 +74,8 @@
         display:inline-block;
         border: none;
         &:hover{
-          color: #ffffff;
-          background-color: $primary;
+          color: $menubar-hover-active-text;
+          background-color: $menubar-background-hover;
           border: none;
         }
       }
@@ -93,8 +93,8 @@
         li{
           display: block;
           a {
-            color:#ffffff;
-            background-color: $text-color;
+            color: $menubar-text;
+            background-color: $menubar-background-black;
           }
         }
       }
