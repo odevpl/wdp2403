@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
@@ -6,6 +6,37 @@ import ProductBox from '../../common/ProductBox/ProductBox';
 const NewFurniture = ({ categories, products }) => {
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('bed');
+  const [screenWidth, setScreentWidth] = useState(window.innerWidth);
+
+  const colDeviceMode = {
+    desktop: 'col-3',
+    tablet: 'col-4',
+    mobile: 'col-6',
+  };
+
+  const [deviceType, setDeviceType] = useState(colDeviceMode.desktop);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setScreentWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (screenWidth >= 1024) {
+      setDeviceType(colDeviceMode.desktop);
+    } else if (screenWidth >= 768) {
+      setDeviceType(colDeviceMode.tablet);
+    } else {
+      setDeviceType(colDeviceMode.mobile);
+    }
+  }, [screenWidth, colDeviceMode.desktop, colDeviceMode.tablet, colDeviceMode.mobile]);
 
   const handlePageChange = newPage => {
     setActivePage(newPage);
@@ -61,7 +92,8 @@ const NewFurniture = ({ categories, products }) => {
         </div>
         <div className='row'>
           {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-            <div key={item.id} className='col-3'>
+            <div key={item.id} className={deviceType}>
+              console.log(deviceType);
               <ProductBox {...item} />
             </div>
           ))}
