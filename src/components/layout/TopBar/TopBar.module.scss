@@ -13,10 +13,11 @@
       line-height: 55px;
 
       a {
-        color: #ffffff;
+        color: $topbar-text;
         font-size: 13px;
 
         &:hover {
+          @extend %hover-effects;
           color: $primary;
           text-decoration: none;
         }
@@ -38,5 +39,27 @@
     .icon {
       margin-right: 5px;
     }
+  }
+}
+
+@media (max-width: 767px) {
+  .root {
+    .topMenu ul li {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .topMenu {
+    max-width: 40%
+  }
+  .root {
+    .topOptions ul li {
+      margin-right: 0.5rem;
+    }
+
   }
 }
