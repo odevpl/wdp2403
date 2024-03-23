@@ -40,3 +40,25 @@
     }
   }
 }
+
+@media (max-width: 767px) {
+  .root {
+    .topMenu ul li {
+      span {
+        display: none;
+      }
+    }
+  }
+}
+
+@media (max-width: 520px) {
+  .topMenu {
+    max-width: 40%
+  }
+  .root {
+    .topOptions ul li {
+      margin-right: 0.5rem;
+    }
+
+  }
+}
