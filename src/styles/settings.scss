@@ -76,3 +76,13 @@ $menubar-hover-active-text: $white;
 
 /* TopBar */
 $topbar-text: $white;
+
+/* Variable Animation Times */
+$animation-time-background: 250ms;
+$animation-time-text: 250ms;
+
+/* Animation Placeholder */
+%hover-effects {
+  transition-property: background-color, color;
+  transition-duration: $animation-time-background, $animation-time-text;
+}
