@@ -8,7 +8,12 @@
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
-    background-size: cover;
+    background: {
+      color: $productbox-background-photo;
+      size: contain;
+      position: center;
+      repeat: no-repeat;
+    }
     overflow: hidden;
     align-items: flex-end;
 
