@@ -12,10 +12,11 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
-const ProductBox = ({ name, price, promo, stars }) => (
+const ProductBox = ({ name, price, promo, stars, img }) => (
   <div className={styles.root}>
     <Link to={`/product/${name}`}>
       <div className={styles.photo}>
+        <img src={img} alt={name} />
         {promo && <div className={styles.sale}>{promo}</div>}
       </div>
     </Link>
