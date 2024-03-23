@@ -93,7 +93,6 @@ const NewFurniture = ({ categories, products }) => {
         <div className='row'>
           {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
             <div key={item.id} className={deviceType}>
-              console.log(deviceType);
               <ProductBox {...item} />
             </div>
           ))}
