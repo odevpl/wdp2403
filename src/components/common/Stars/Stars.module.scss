@@ -1,7 +1,17 @@
 @import "../../../styles/settings.scss";
-  .stars {
-    a {
-      text-decoration: none;
-      color: $productbox-stars;
-    }
+.stars {
+  a {
+    text-decoration: none;
+    color: $productbox-stars;
+  }
+
+  a:hover ~ a {
+  @extend %hover-effects;
+  color: $productbox-stars;
+  }
+}
+
+.stars:hover a {
+  @extend %hover-effects;
+  color: $productbox-stars-hover;
 }
