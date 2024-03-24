@@ -1,13 +1,14 @@
-import React, { useState } from 'react';
-import PropTypes, { string } from 'prop-types';
+import React, { useContext, useState } from 'react';
+import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import { DeviceTypeContext } from '../../layout/MainLayout/MainLayout';
 
-const NewFurniture = ({ categories, products, deviceType }) => {
+const NewFurniture = ({ categories, products }) => {
+  const deviceType = useContext(DeviceTypeContext);
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('bed');
-  // eslint-disable-next-line no-console
-  console.log(deviceType);
+
   const handlePageChange = newPage => {
     setActivePage(newPage);
   };
@@ -91,7 +92,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
-  deviceType: string,
+  deviceType: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {
