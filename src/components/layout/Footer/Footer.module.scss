@@ -23,6 +23,7 @@
             color: $footer-menu-list;
 
             &:hover {
+              @extend %hover-effects;
               color: $white;
             }
           }
@@ -72,6 +73,7 @@
             text-decoration: none;
 
             &:hover {
+              @extend %hover-effects;
               color: $primary;
             }
           }

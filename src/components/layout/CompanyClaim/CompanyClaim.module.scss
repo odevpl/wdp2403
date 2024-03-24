@@ -64,9 +64,21 @@
 
       &:hover {
         .cartIcon {
+          @extend %hover-effects;
           background-color: lighten($primary, 10%);
         }
       }
     }
   }
+}
+
+@media (max-width: 767px) {
+  .root {
+    .phoneNumber {
+      p {
+        font-size: 14px;
+      }
+    }
+  }
+
 }
