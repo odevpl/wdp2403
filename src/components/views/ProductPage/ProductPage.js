@@ -9,11 +9,13 @@ import { getAllProducts } from '../../../redux/productsRedux';
 
 
 const ProductPage = () => {
+  const allCategories = useSelector(getAllCategories);
+  const allProducts = useSelector(getAllProducts);
+
   return (
     <div className={styles.root}>
-
       <ProductCard />
-      <NewFurniture />
+      <NewFurniture categories={allCategories} products={allProducts} />
     </div>
   );
 };
