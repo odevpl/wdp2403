@@ -9,9 +9,19 @@
   @extend %hover-effects;
   color: $productbox-stars;
   }
+
+  a:hover {
+    @extend %hover-effects;
+    color: $productbox-stars-hover !important;
+  }
+
+  &:hover a {
+    @extend %hover-effects;
+    color: $productbox-stars-hover;
+  }
+
+  a.userStars {
+    color: $productbox-stars-hover;
+  }
 }
 
-.stars:hover a {
-  @extend %hover-effects;
-  color: $productbox-stars-hover;
-}
