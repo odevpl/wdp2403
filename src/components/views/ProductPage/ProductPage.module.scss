@@ -3,3 +3,363 @@
 .root {
   padding: $base-padding 0;
 }
+
+.product {
+  display: flex;
+  flex-direction: row;
+  border: $approxSilver solid 1px;
+  padding: 12px;
+  padding-bottom: 45px;
+}
+
+/* Main Photo */
+
+.photo {
+  width: 437px;
+  height: 612px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .bigPhoto {
+    width: 100%;
+    height: 493px;
+    background-color: $productpage-photo;position: relative;
+
+    .resize {
+      border: $productpage-border-resize-icon solid 1px;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      margin: 10px;
+
+      .resizeIcon {
+        font-size: 16px;
+        justify-content: center;
+      }
+    }
+  }
+
+  /* Photo list */
+
+  .listPhoto {
+    width: 411px;
+    height: 105px;
+    display: flex;;
+    gap: 17px;
+    justify-content: space-around;
+    position: relative;
+
+    .smallPhoto {
+      width: 84px;
+      height: 104px;
+      background-color: $productpage-photo;
+      margin-top: 15px;
+    }
+
+    .arrow {
+      border: $productpage-border-arrow solid 1px;
+      font-size: 16px;
+      padding: 7px;
+      width: 29px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .arrowRight {
+      position: absolute;
+      right: -6%;
+      bottom: 5%;
+      transform: translate(-50%, -50%);
+      background-color: $productpage-arrow-background;
+      border: none;
+
+      .right {
+        color: $productpage-arrow-right-font;
+      }
+    }
+
+    .arrowLeft {
+      position: absolute;
+      left: 1%;
+      bottom: 5%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+
+.content {
+  padding-left: 32px;
+  margin: 0;
+
+  /* Header */
+
+  .header {
+    display: flex;
+    position: relative;
+
+    .title {
+      font-size: 22px;
+      color: $productpage-header;
+      font-weight: 600;
+      width: 623px;
+      margin-bottom: 12px;
+    }
+
+    .changeProductArrow {
+      border: $productpage-border-arrow solid 1px;
+      font-size: 16px;
+      padding: 7px;
+      width: 29px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      margin-right: 7px;
+    }
+
+    .changeArrowRight {
+      background-color: $productpage-arrow-background;
+      border: none;
+      position: absolute;
+      right: 0;
+
+      .right {
+        color: $productpage-arrow-right-font;
+      }
+    }
+
+    .changeArrowLeft {
+      position: absolute;
+      right: 5.5%;
+    }
+  }
+
+  /* Reviews */
+
+  .reviews {
+    display: flex;
+    align-items: center;
+
+    .stars {
+
+      a {
+        color: $black;
+      }
+    }
+
+    .counterReviews, .addReviews {
+      font-size: 12px;
+      color: $productpage-add-counter-reviews;
+      font-weight: 400;
+      align-items: center;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .stars, .counterReviews, .addReviews {
+      margin-right: 12px;
+      margin-bottom: 10px;
+    }
+  }
+
+  /* Price */
+
+  .price {
+    max-width: 150px;
+    display: flex;
+    align-items: baseline;
+    margin-top: 18px;
+    .standardPrice {
+      font-size: 15px;
+      color: $productpage-standard-price;
+      font-weight: 300;
+      margin-right: 10px;
+      align-items: center;
+    }
+
+    .specialPrice {
+      color: $productpage-special-price;
+      background-color: $productpage-background-price;
+      font-size: 20px;
+      padding: 9px;
+      font-weight: 600;
+
+      h2 {
+        margin: 0;
+      }
+    }
+
+    .specialPrice, .standardPrice {
+      margin-bottom: 15px;
+    }
+  }
+
+  /* Buttons */
+
+  .buttons {
+    margin-top: 15px;
+
+    .addToCart {
+      background-color: $productpage-add-to-cart;
+      margin-right: 7px ;
+      padding: 9px 14px;
+    }
+  }
+
+  /* Quantity */
+
+  .quantity {
+    margin: 15px 0;
+    display: flex;
+    height: 30px;
+    align-items: baseline;
+
+    p {
+      font-size: 14px;
+      color: $productpage-quantity-title;
+      font-weight: 500;
+      margin-right: 27px;
+    }
+
+    .items {
+      border: $productpage-items-border solid 1px;
+      margin-right: 7px;
+
+      p {
+      padding: 7px 30px;
+      margin: 0;
+      text-align: center;
+      }
+    }
+  }
+
+  /* Quick Overview */
+
+  .overview {
+    margin-top: 15px;
+
+    .text {
+      max-width: 582px;
+    }
+  }
+
+  /* Product Details */
+
+  .productDetails {
+    margin-top: 20px;
+
+    .availability, .categoryProduct {
+      display: flex;
+
+      .sectionTitle {
+        min-width: 95px;
+      }
+
+      .description {
+        align-items: baseline;
+      }
+    }
+  }
+
+  /* Social Media */
+
+  .socialMedia {
+    display: flex;
+
+    .socialMediaIcon {
+      display: flex;
+      border: $productpage-social-media-border solid 1px;
+      height: 40px;
+      margin-right: 7px;
+      margin-top: 30px;
+
+      .facebook {
+        background-color: $productpage-facebook;
+      }
+
+
+      .googlePlus {
+        color: $productpage-google-plus;
+      }
+
+      .twitter {
+        color: $productpage-twitter;
+      }
+
+      .pinterest {
+        color: $productpage-pinterest;
+      }
+
+      .linkedin {
+        color: $productpage-linkedin;
+      }
+
+      .brandIcon {
+        font-size: 16px;
+        margin: auto 9px;
+        align-items: baseline;
+      }
+
+      p {
+        margin: auto 0;
+        margin-right: 9px;
+        font-size: 13px;
+        color: #888888;
+        font-weight: 400;
+
+      }
+
+      .hoverBrand {
+        color: $productpage-hover-social;
+      }
+
+    }
+
+    .hoverFacebook {
+      background-color: $productpage-facebook;
+      border: none;
+    }
+
+    .hoverIcon {
+      color: $productpage-hover-social;
+    }
+  }
+
+  .description {
+    font-size: 14px;
+    line-height: 25px;
+    color: $productpage-description;
+    font-weight: 400;
+    margin: 0;
+  }
+
+  .sectionTitle {
+    font-size: 15px;
+    line-height: 25px;
+    color: $productpage-section-title;
+    font-weight: 600;
+    margin-right: 15px ;
+  }
+
+  .icon {
+    padding: 7px 13px;
+    margin-right: 6px;
+  }
+
+  .line {
+    border-bottom: $superLightSilver solid 1px;
+    max-width: 620px;
+  }
+
+  .marginTop {
+    padding-top: 15px;
+  }
+}
