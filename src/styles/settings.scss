@@ -9,14 +9,23 @@ $nero: rgb(42, 42, 42);
 $mostlyBlack: rgba(1, 2, 2, 0.2);
 $darkGrey: #363636;
 $grey: #434343;
+$suvaGrey: #939393;
+$graniteGrey: #676767;
 $lightGrey: #b6b6b6;
 $veryLightGrey:#e1e1e1;
 $superLightGrey: #e2e2e2;
 $silver: rgb(224, 227, 237);
 $lightSilver: rgb(216, 216, 216);
+$superLightSilver: #cccccc;
+$approxSilver: #c2c2c2;
 $greyChateau: rgb(169, 169, 169);
 $white: #ffffff;
 $lightGrayishBlue: #f4f5f7;
+$blue: #3B5997;
+$dodgerBlue: #4099ff;
+$blueAster: #0077b5;
+$red: #d62d20;
+$darkRed: #c92228;
 $transparent: transparent;
 
 /* VARIABLES TO USE IN COMPONENTS */
@@ -76,6 +85,31 @@ $menubar-hover-active-text: $white;
 
 /* TopBar */
 $topbar-text: $white;
+
+/* ProductPage */
+$productpage-photo: $lightGrayishBlue;
+$productpage-header: $black;
+$productpage-line: $superLightSilver;
+$productpage-standard-price: $suvaGrey;
+$productpage-special-price: $white;
+$productpage-background-price: $black;
+$productpage-add-counter-reviews: $graniteGrey;
+$productpage-add-to-cart: $primary;
+$productpage-quantity-title: $black;
+$productpage-items-border: $black;
+$productpage-section-title: $black;
+$productpage-description: $graniteGrey;
+$productpage-social-media-border: $black;
+$productpage-facebook: $blue;
+$productpage-google-plus: $red;
+$productpage-twitter: $dodgerBlue;
+$productpage-pinterest: $darkRed;
+$productpage-linkedin: $blueAster;
+$productpage-border-resize-icon: $black;
+$productpage-border-arrow: $black;
+$productpage-arrow-right-font: $white;
+$productpage-arrow-background: $primary;
+$productpage-hover-social: $white;
 
 /* Variable Animation Times */
 $animation-time-background: 250ms;
