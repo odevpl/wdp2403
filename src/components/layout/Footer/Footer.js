@@ -16,7 +16,7 @@ const Footer = ({ children }) => (
   <footer className={styles.root}>
     <div className={styles.footerMenu}>
       <div className='container'>
-        <div className='row'>
+        <div className='row row-cols-md-4 row-cols-sm-2 row-cols-1 text-center text-sm-left'>
           <div className='col'>
             <div className={styles.menuWrapper}>
               <h6>Information</h6>
@@ -92,7 +92,8 @@ const Footer = ({ children }) => (
                 </li>
               </ul>
             </div>
-            <img src='./images/cards.png' alt='Supported credit cards' />
+            <img src='./images/cards1.png' alt='Supported credit cards1' />
+            <img src='./images/cards2.png' alt='Supported credit cards2' />
           </div>
         </div>
       </div>
@@ -100,11 +101,13 @@ const Footer = ({ children }) => (
     <div className={styles.bottomBar}>
       <div className='container'>
         <div className='row align-items-center'>
-          <div className='col'></div>
-          <div className={'col text-center ' + styles.copyright}>
+          <div className='col col-xl col-12 text-center'></div>
+          <div className={'col text-center col-md col-12 ' + styles.copyright}>
             <p>©Copyright 2016 Bazar | All Rights Reserved</p>
           </div>
-          <div className={'col text-right ' + styles.socialMedia}>
+          <div
+            className={'col text-right col-md col-12 text-center ' + styles.socialMedia}
+          >
             <ul>
               <li>
                 <a href='#'>
