@@ -1,0 +1,28 @@
+@import "../../../styles/settings.scss";
+
+.reviews{
+  margin-bottom: 60px;
+  .revList{
+    color: $productcard-info-color;
+  }
+  input{
+    padding: 10px;
+    width: 95%;
+  }
+  label{
+    display: block;
+    color: $productcard-info-color;
+  }
+  textarea{
+    width: 100%;
+    resize: none;
+  }
+  .stars {
+    a {
+      text-decoration: none;
+    }
+    label{
+      display:inline-block;
+    }
+  }
+}

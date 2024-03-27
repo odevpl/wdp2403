@@ -86,3 +86,11 @@ $animation-time-text: 250ms;
   transition-property: background-color, color;
   transition-duration: $animation-time-background, $animation-time-text;
 }
+
+/* ProductCard */
+
+$productcard-border: 1px solid $lightGrey;
+$productcard-info-color: $grey;
+$productcard-btn-background: $black;
+$productcard-btn-text: $white;
+
