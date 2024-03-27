@@ -1,18 +1,6 @@
 @import "../../../styles/settings.scss";
 
-
-
 .root {
-  color: white;
-
-  .splash{
-    background-color: $grey;
-    height: 195px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    .headline{
-      font-size: 50px;
-    }
-  }
+  padding: $base-padding 0;
 }
+
