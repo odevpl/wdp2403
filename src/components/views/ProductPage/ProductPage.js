@@ -8,12 +8,17 @@ const ProductPage = () => {
       <div className={styles.root}>
         <div className={styles.splash}>
           <div className={styles.headline}>
-            <span>
+            <span className='col-sm'>
               BEDROOM <strong>FURNITURE</strong>
             </span>
-            <p></p>
+            <p className='col-sm'>
+              ALWAYS <span className={styles.discount}>25% </span> OFF OR MORE
+            </p>
           </div>
         </div>
+      </div>
+      <div className={styles.belt}>
+        <span>Home</span> {'>'} <span className={styles.destination}>Furniture</span>
       </div>
     </div>
   );
