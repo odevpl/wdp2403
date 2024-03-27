@@ -7,13 +7,13 @@
 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
     background: {
       color: $productbox-background-photo;
       size: contain;
       position: center;
       repeat: no-repeat;
     }
+    background-size: cover;
     overflow: hidden;
     align-items: flex-end;
 
@@ -32,6 +32,17 @@
       display: flex;
       justify-content: space-between;
     }
+    img{
+      object-fit: cover;
+      padding-top: 0;
+      background-size: cover;
+      width: 260px;
+      height: 260px;
+    }
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
   }
 
   .content {
