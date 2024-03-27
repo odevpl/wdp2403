@@ -50,3 +50,8 @@
     color: $button-text;
   }
 }
+
+.active {
+  color: $button-icon-active;
+  background-color: $button-background-active;
+}

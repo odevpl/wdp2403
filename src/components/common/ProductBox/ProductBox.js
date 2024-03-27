@@ -12,7 +12,7 @@ import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons'
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 
-const ProductBox = ({ name, price, promo, stars, img }) => (
+const ProductBox = ({ favorite, comparision, name, price, promo, stars, img }) => (
   <div className={styles.root}>
     <Link to={`/product/${name}`}>
       <div className={styles.photo}>
@@ -45,10 +45,10 @@ const ProductBox = ({ name, price, promo, stars, img }) => (
     <div className={styles.line}></div>
     <div className={styles.actions}>
       <div className={styles.outlines}>
-        <Button variant='outline'>
+        <Button variant='outline' favorite={favorite}>
           <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
         </Button>
-        <Button variant='outline'>
+        <Button variant='outline' comparision={comparision}>
           <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
         </Button>
       </div>
@@ -67,6 +67,9 @@ ProductBox.propTypes = {
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  img: PropTypes.string,
+  favorite: PropTypes.bool,
+  comparision: PropTypes.bool,
 };
 
 export default ProductBox;
