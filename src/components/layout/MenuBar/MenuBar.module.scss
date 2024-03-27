@@ -69,10 +69,11 @@
   .root {
     .menu{
       position: relative;
-
+      align-items: center;
       .burger{
         display:inline-block;
         border: none;
+        height: 53px;
         &:hover{
           color: $menubar-hover-active-text;
           background-color: $menubar-background-hover;
@@ -96,6 +97,32 @@
             color: $menubar-text;
             background-color: $menubar-background-black;
           }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 537px ) and (min-width: 456px){
+  .root {
+    .menu{
+      ul{
+        left: 15px;
+        li{
+          width: 104px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 330px){
+  .root {
+    .menu{
+      ul{
+        left: 15px;
+        li{
+          width: 104px;
         }
       }
     }
