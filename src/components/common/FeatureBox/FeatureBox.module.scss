@@ -61,17 +61,21 @@
     }
   }
 
+  &:hover,
   &.active {
     .iconWrapper {
+      @extend %hover-effects;
       color: $feature-box-icon;
 
       &::after {
+        @extend %hover-effects;
         background-color: $primary;
         border-color: $primary;
       }
     }
 
     .content {
+      @extend %hover-effects;
       color: $primary;
     }
   }
