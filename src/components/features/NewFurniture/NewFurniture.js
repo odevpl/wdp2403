@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import { DeviceTypeContext } from '../../layout/MainLayout/MainLayout';
 
 const NewFurniture = ({ categories, products }) => {
+  const deviceType = useContext(DeviceTypeContext);
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('bed');
 
@@ -61,7 +63,7 @@ const NewFurniture = ({ categories, products }) => {
         </div>
         <div className='row'>
           {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-            <div key={item.id} className='col-6 col-md-4 col-lg-3'>
+            <div key={item.id} className={deviceType}>
               <ProductBox {...item} />
             </div>
           ))}
@@ -90,6 +92,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  deviceType: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {
