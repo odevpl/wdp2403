@@ -11,8 +11,10 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import clsx from 'clsx';
 
-const ProductBox = ({ favorite, comparision, name, price, promo, stars, img }) => (
+const ProductBox = ({ favorite, comparision, name, price, promo, stars, img, oldPrice  }) => (
+
   <div className={styles.root}>
     <Link to={`/product/${name}`}>
       <div className={styles.photo}>
@@ -53,6 +55,10 @@ const ProductBox = ({ favorite, comparision, name, price, promo, stars, img }) =
         </Button>
       </div>
       <div className={styles.price}>
+        <span className={clsx(oldPrice === 0 && styles.active, styles.oldPrice)}>
+          {' '}
+          $ {oldPrice}
+        </span>
         <Button noHover variant='small'>
           $ {price}
         </Button>
@@ -70,6 +76,8 @@ ProductBox.propTypes = {
   img: PropTypes.string,
   favorite: PropTypes.bool,
   comparision: PropTypes.bool,
+  oldPrice: PropTypes.number,
+
 };
 
 export default ProductBox;
