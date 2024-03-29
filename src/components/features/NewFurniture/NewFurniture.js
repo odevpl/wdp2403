@@ -4,7 +4,7 @@ import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import { DeviceTypeContext } from '../../layout/MainLayout/MainLayout';
 import clsx from 'clsx';
-
+import FadeIn from 'react-fade-in/lib/FadeIn';
 
 const NewFurniture = ({ categories, products }) => {
   const deviceType = useContext(DeviceTypeContext);
@@ -66,7 +66,10 @@ const NewFurniture = ({ categories, products }) => {
         <div className='row'>
           {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
             <div key={item.id} className={deviceType}>
-              <ProductBox {...item} />
+              {/* <div key={item.id} className={clsx(deviceType, animate ? styles.fadeOut : styles.fadeIn)}> */}
+              <FadeIn>
+                <ProductBox {...item} />
+              </FadeIn>
             </div>
           ))}
         </div>
