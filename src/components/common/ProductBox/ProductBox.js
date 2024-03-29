@@ -68,6 +68,8 @@ ProductBox.propTypes = {
   promo: PropTypes.string,
   stars: PropTypes.number,
   img: PropTypes.string,
+  favorite: PropTypes.bool,
+  comparision: PropTypes.bool,
 };
 
 export default ProductBox;
