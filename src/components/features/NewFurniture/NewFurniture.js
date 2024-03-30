@@ -66,7 +66,6 @@ const NewFurniture = ({ categories, products }) => {
         <div className='row'>
           {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
             <div key={item.id} className={deviceType}>
-              {/* <div key={item.id} className={clsx(deviceType, animate ? styles.fadeOut : styles.fadeIn)}> */}
               <FadeIn>
                 <ProductBox {...item} />
               </FadeIn>
