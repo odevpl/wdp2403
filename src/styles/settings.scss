@@ -12,6 +12,7 @@ $grey: #434343;
 $approxGrey: #888888;
 $suvaGrey: #939393;
 $graniteGrey: #676767;
+$cerebralGrey: #cccccc;
 $lightGrey: #b6b6b6;
 $veryLightGrey:#e1e1e1;
 $superLightGrey: #e2e2e2;
@@ -152,7 +153,6 @@ $furniture-label: $shadowGrey;
 $furniture-border: $grey-border;
 $furniture-line: $black;
 
-
 /* Product Box Horizontal */
 
 $productboxhorizontal-line:$superShadowGrey;
@@ -163,3 +163,8 @@ $productboxhorizontal-background-photo: $lightGrayishBlue;
 $productboxhorizontal-sale: $darkBlack;
 $productboxhorizontal-sale-text: $white;
 $productboxhorizontal-name-text: $orange;
+
+/* BrandBar */
+$brandbar-border: $cerebralGrey;
+$brandbar-arrow: $white;
+$brandbar-arrow-background: $black;

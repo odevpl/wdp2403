@@ -1526,6 +1526,38 @@ const initialState = {
   cart: {
     products: [],
   },
+  brands: [
+    {
+      id: 'brand-1',
+      name: 'Brand 1',
+      img: 'https://i.postimg.cc/FK4Jkm46/brand-1.jpg',
+    },
+    {
+      id: 'brand-2',
+      name: 'Brand 2',
+      img: 'https://i.postimg.cc/4yqYfRPB/brand-2.jpg',
+    },
+    {
+      id: 'brand-3',
+      name: 'Brand 3',
+      img: 'https://i.postimg.cc/9Q3DsVrf/brand-3.jpg',
+    },
+    {
+      id: 'brand-4',
+      name: 'Brand 4',
+      img: 'https://i.postimg.cc/Ls2n6TkK/brand-4.jpg',
+    },
+    {
+      id: 'brand-5',
+      name: 'Brand 5',
+      img: 'https://i.postimg.cc/MHCGkbZL/brand-5.jpg',
+    },
+    {
+      id: 'brand-6',
+      name: 'Brand 6',
+      img: 'https://i.postimg.cc/26B60KrW/brand-6.jpg',
+    },
+  ],
 };
 
 export default initialState;
