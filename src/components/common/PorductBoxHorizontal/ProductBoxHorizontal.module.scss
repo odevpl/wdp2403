@@ -1,0 +1,83 @@
+@import "../../../styles/settings.scss";
+
+.root{
+  border-bottom: 4px solid $newfurniture-line;
+  display: flex;
+  margin-bottom: 1rem;
+
+  .photo {
+    position: relative;
+    background: {
+      color: $productbox-background-photo;
+      size: contain;
+      position: center;
+      repeat: no-repeat;
+    }
+    background-size: cover;
+    overflow: hidden;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+
+    .sale {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $productbox-sale;
+      border-radius: 50%;
+      color: $productbox-sale-text;
+      padding: 30px 15px 5px 15px;
+
+    }
+
+    img{
+      object-fit: cover;
+      padding-top: 0;
+      background-size: cover;
+      width: 260px;
+      height: 260px;
+    }
+  }
+
+  .body{
+    .content {
+      padding: 20px;
+
+      h5 {
+        color: $primary;
+        font-size: 16px;
+        line-height: 24px;
+        letter-spacing: 1px;
+        font-weight: 600;
+      }
+
+      .stars {
+        a {
+          text-decoration: none;
+          color: $productbox-stars;
+        }
+      }
+
+      .price{
+        font-weight: 700;
+        font-size: 16px;
+      }
+
+      .description{
+        span{
+          padding-bottom: 1rem;
+        }
+      }
+    }
+
+    .line{
+      border-bottom: 4px solid $newfurniture-line;
+      margin: 0 10px;
+    }
+
+    .actions {
+      color: red;
+    }
+
+  }
+}

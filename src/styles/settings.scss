@@ -18,6 +18,8 @@ $greyChateau: rgb(169, 169, 169);
 $white: #ffffff;
 $lightGrayishBlue: #f4f5f7;
 $transparent: transparent;
+$grey-border: #b7b7b7;
+$shadowGrey: #939393;
 
 /* VARIABLES TO USE IN COMPONENTS */
 
@@ -96,3 +98,7 @@ $productcard-info-color: $grey;
 $productcard-btn-background: $black;
 $productcard-btn-text: $white;
 
+/* Furniture */
+
+$furniture-label: $shadowGrey;
+$furniture-border: $grey-border;
