@@ -50,18 +50,19 @@ const ProductPage = () => {
               </div>
             </div>
             <div className={styles.listPhoto}>
-              <div className={clsx(styles.arrow, styles.arrowLeft)}>
-                <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
+              <div className={clsx(styles.arrowLeft)}>
+                <Button variant='outline' className={styles.arrowPhoto}>
+                  <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
+                </Button>
               </div>
               <div className={styles.smallPhoto}></div>
               <div className={styles.smallPhoto}></div>
               <div className={styles.smallPhoto}></div>
               <div className={styles.smallPhoto}></div>
-              <div className={clsx(styles.arrow, styles.arrowRight)}>
-                <FontAwesomeIcon
-                  className={styles.right}
-                  icon={faChevronRight}
-                ></FontAwesomeIcon>
+              <div className={clsx(styles.arrowRight)}>
+                <Button variant='outline' className={styles.arrowPhoto}>
+                  <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
+                </Button>
               </div>
             </div>
           </div>
@@ -69,13 +70,14 @@ const ProductPage = () => {
             <div className={styles.header}>
               <h2 className={styles.title}>Sunbany Magic Bear Chair</h2>
               <div className={clsx(styles.changeProductArrow, styles.changeArrowLeft)}>
-                <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
+                <Button variant='outline' className={styles.arrow}>
+                  <FontAwesomeIcon icon={faChevronLeft}></FontAwesomeIcon>
+                </Button>
               </div>
               <div className={clsx(styles.changeProductArrow, styles.changeArrowRight)}>
-                <FontAwesomeIcon
-                  className={styles.right}
-                  icon={faChevronRight}
-                ></FontAwesomeIcon>
+                <Button variant='outline' className={styles.arrow}>
+                  <FontAwesomeIcon icon={faChevronRight}></FontAwesomeIcon>
+                </Button>
               </div>
             </div>
             <div className={clsx(styles.reviews, styles.line)}>
@@ -155,16 +157,30 @@ const ProductPage = () => {
             </div>
             <div className={clsx(styles.line, styles.marginTop)}></div>
             <div className={styles.socialMedia}>
-              <div className={clsx(styles.socialMediaIcon, styles.hoverFacebook)}>
+              <Button
+                variant='outline'
+                className={clsx(
+                  styles.socialMediaIcon,
+                  styles.btnFacebook,
+                  styles.btnHover
+                )}
+              >
                 <FontAwesomeIcon
-                  className={clsx(styles.brandIcon, styles.facebook, styles.hoverIcon)}
+                  className={clsx(styles.brandIcon, styles.facebook)}
                   icon={faFacebookF}
                 >
                   facebook
                 </FontAwesomeIcon>
                 <p className={styles.hoverBrand}>Share</p>
-              </div>
-              <div className={styles.socialMediaIcon}>
+              </Button>
+              <Button
+                variant='outline'
+                className={clsx(
+                  styles.socialMediaIcon,
+                  styles.btnGooglePlus,
+                  styles.btnHover
+                )}
+              >
                 <FontAwesomeIcon
                   className={clsx(styles.brandIcon, styles.googlePlus)}
                   icon={faGooglePlusG}
@@ -172,8 +188,15 @@ const ProductPage = () => {
                   google plus
                 </FontAwesomeIcon>
                 <p>Google+</p>
-              </div>
-              <div className={styles.socialMediaIcon}>
+              </Button>
+              <Button
+                variant='outline'
+                className={clsx(
+                  styles.socialMediaIcon,
+                  styles.btnTwitter,
+                  styles.btnHover
+                )}
+              >
                 <FontAwesomeIcon
                   className={clsx(styles.brandIcon, styles.twitter)}
                   icon={faTwitter}
@@ -181,8 +204,15 @@ const ProductPage = () => {
                   twitter
                 </FontAwesomeIcon>
                 <p>Tweet</p>
-              </div>
-              <div className={styles.socialMediaIcon}>
+              </Button>
+              <Button
+                variant='outline'
+                className={clsx(
+                  styles.socialMediaIcon,
+                  styles.btnPinterest,
+                  styles.btnHover
+                )}
+              >
                 <FontAwesomeIcon
                   className={clsx(styles.brandIcon, styles.pinterest)}
                   icon={faPinterestP}
@@ -190,8 +220,15 @@ const ProductPage = () => {
                   pinterest
                 </FontAwesomeIcon>
                 <p>Pinterest</p>
-              </div>
-              <div className={styles.socialMediaIcon}>
+              </Button>
+              <Button
+                variant='outline'
+                className={clsx(
+                  styles.socialMediaIcon,
+                  styles.btnLinkedin,
+                  styles.btnHover
+                )}
+              >
                 <FontAwesomeIcon
                   className={clsx(styles.brandIcon, styles.linkedin)}
                   icon={faLinkedinIn}
@@ -199,7 +236,7 @@ const ProductPage = () => {
                   linkedin
                 </FontAwesomeIcon>
                 <p>Linkedin</p>
-              </div>
+              </Button>
             </div>
           </div>
         </div>
