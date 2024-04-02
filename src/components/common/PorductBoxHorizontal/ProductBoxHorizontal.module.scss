@@ -41,7 +41,7 @@
 
   .body{
     .content {
-      padding: 20px;
+      padding: 0 20px 20px 20px;
 
       h5 {
         color: $primary;
@@ -49,9 +49,11 @@
         line-height: 24px;
         letter-spacing: 1px;
         font-weight: 600;
+        margin-bottom: 0;
       }
 
       .stars {
+        padding-top: 10px;
         a {
           text-decoration: none;
           color: $productbox-stars;
@@ -61,23 +63,32 @@
       .price{
         font-weight: 700;
         font-size: 16px;
+        padding-top: 10px;
       }
 
       .description{
-        span{
-          padding-bottom: 1rem;
-        }
+        padding-top: 20px;
       }
     }
 
     .line{
       border-bottom: 4px solid $newfurniture-line;
-      margin: 0 10px;
+      margin-left: 20px;
     }
 
     .actions {
-      color: red;
+      margin: 20px 0 20px 20px;
+      & > * {
+        margin-right: 5px;
+      }
+
+      a:last-of-type {
+        padding-top: 7px;
+        padding-bottom: 7px;
+      }
     }
+
+
 
   }
 }

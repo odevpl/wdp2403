@@ -46,7 +46,7 @@ const ProductBoxHorizontal = ({ name, price, promo, stars, img, description }) =
           </div>
         </div>
         <div className={styles.line}></div>
-        <div className={styles.action}>
+        <div className={styles.actions}>
           <Button variant='outline'>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
