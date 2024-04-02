@@ -12,6 +12,7 @@ import {
   faExpand,
   faChevronLeft,
   faChevronRight,
+  faStar,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faStar as farStar,
@@ -74,7 +75,11 @@ const ProductPage = () => {
               <div className={styles.stars}>
                 {[1, 2, 3, 4, 5].map(i => (
                   <a key={i} href='#'>
-                    <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                    {i <= 2 ? (
+                      <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
+                    ) : (
+                      <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
+                    )}
                   </a>
                 ))}
               </div>
@@ -115,10 +120,10 @@ const ProductPage = () => {
                 <p>2</p>
               </div>
               <Button variant='outline' className={styles.icon}>
-                <FontAwesomeIcon icon={faPlus}>Add item</FontAwesomeIcon>
+                <FontAwesomeIcon icon={faMinus}>Send message</FontAwesomeIcon>
               </Button>
               <Button variant='outline' className={styles.icon}>
-                <FontAwesomeIcon icon={faMinus}>Send message</FontAwesomeIcon>
+                <FontAwesomeIcon icon={faPlus}>Add item</FontAwesomeIcon>
               </Button>
             </div>
             <div className={clsx(styles.line, styles.marginTop)}></div>
@@ -168,7 +173,7 @@ const ProductPage = () => {
                 >
                   twitter
                 </FontAwesomeIcon>
-                <p>Twitt</p>
+                <p>Tweet</p>
               </div>
               <div className={styles.socialMediaIcon}>
                 <FontAwesomeIcon
