@@ -12,6 +12,11 @@
     display: flex;
     align-self: stretch;
 
+    .burger{
+      display: none;
+      width: 53px;
+    }
+
     ul {
       margin: 0;
       padding: 0;
@@ -25,7 +30,7 @@
     }
 
     a {
-      color: $text-color;
+      color: $menubar-text-black;
       text-transform: uppercase;
       font-size: 12px;
       padding: 1rem;
@@ -39,13 +44,86 @@
       &:hover,
       &.active {
         @extend %hover-effects;
-        background-color: $primary;
+        background-color: $menubar-background-hover;
         color: $menubar-hover-active-text;
-        border-color: $primary;
+        border-color: $menubar-background-hover;
       }
 
       &.active {
-        border-color: $text-color;
+        border-color: $menubar-shadow;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 1200px) {
+  .root {
+    :global(.container) > :global(.row) {
+      height: auto;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .root {
+    .menu{
+      position: relative;
+      align-items: center;
+      .burger{
+        display:inline-block;
+        border: none;
+        height: 53px;
+        &:hover{
+          color: $menubar-hover-active-text;
+          background-color: $menubar-background-hover;
+          border: none;
+        }
+      }
+      ul{
+        display: none;
+        position: absolute;
+        right: 15px;
+        top: 53px;
+        flex-direction: column;
+        z-index: 1;
+
+        &.show{
+          display: flex;
+        }
+        li{
+          display: block;
+          a {
+            color: $menubar-text;
+            background-color: $menubar-background-black;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 537px ) and (min-width: 456px){
+  .root {
+    .menu{
+      ul{
+        left: 15px;
+        li{
+          width: 104px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 330px){
+  .root {
+    .menu{
+      ul{
+        left: 15px;
+        li{
+          width: 104px;
+        }
       }
     }
   }
