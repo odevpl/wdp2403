@@ -20,6 +20,9 @@ $lightGrayishBlue: #f4f5f7;
 $transparent: transparent;
 $grey-border: #b7b7b7;
 $shadowGrey: #939393;
+$superShadowGrey: #d7d7d7;
+$semiDarkGrey: #a0a0a0;
+$darkerGrey: #676767;
 
 /* VARIABLES TO USE IN COMPONENTS */
 
@@ -102,3 +105,13 @@ $productcard-btn-text: $white;
 
 $furniture-label: $shadowGrey;
 $furniture-border: $grey-border;
+$furniture-line: $black;
+
+
+/* Product Box Horizontal */
+
+$productboxhorizontal-line:$superShadowGrey;
+$productboxhorizontal-description-line: $semiDarkGrey;
+$productboxhorizontal-description: $darkerGrey;
+$productboxhorizontal-stars: $nero;
+

@@ -1,14 +1,14 @@
 @import "../../../styles/settings.scss";
 
 .root{
-  border-bottom: 4px solid $newfurniture-line;
+  border-bottom: 1px solid $productboxhorizontal-line;
   display: flex;
   margin-bottom: 1rem;
 
   .photo {
     position: relative;
     background: {
-      color: $productbox-background-photo;
+      color: $productboxhorizontal-background-photo;
       size: contain;
       position: center;
       repeat: no-repeat;
@@ -23,9 +23,9 @@
       top: -30px;
       left: 50%;
       transform: translateX(-50%);
-      background-color: $productbox-sale;
+      background-color: $productboxhorizontal-sale;
       border-radius: 50%;
-      color: $productbox-sale-text;
+      color: $productboxhorizontal-sale-text;
       padding: 30px 15px 5px 15px;
 
     }
@@ -46,7 +46,7 @@
       h5 {
         color: $primary;
         font-size: 16px;
-        line-height: 24px;
+        line-height: 41px;
         letter-spacing: 1px;
         font-weight: 600;
         margin-bottom: 0;
@@ -56,7 +56,7 @@
         padding-top: 10px;
         a {
           text-decoration: none;
-          color: $productbox-stars;
+          color: $productboxhorizontal-stars;
         }
       }
 
@@ -68,11 +68,12 @@
 
       .description{
         padding-top: 20px;
+        color: $productboxhorizontal-description;
       }
     }
 
     .line{
-      border-bottom: 4px solid $newfurniture-line;
+      border-bottom: 1px solid $productboxhorizontal-description-line;
       margin-left: 20px;
     }
 
@@ -85,6 +86,8 @@
       a:last-of-type {
         padding-top: 7px;
         padding-bottom: 7px;
+        line-height: 42px;
+        font-weight: 600;
       }
     }
 
