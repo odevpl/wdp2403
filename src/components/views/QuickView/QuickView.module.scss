@@ -1,0 +1,26 @@
+@import '../../../styles/settings.scss';
+
+.root{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  color: black;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  .wrapper{
+    width: 300px;
+    height: 200px;
+    background-color: white;
+    border: 1px solid black;
+    position: relative;
+    .close{
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-left: 5px;
+    }
+    .body{
+      margin-top: 20px;
+    }
+  }
+}
