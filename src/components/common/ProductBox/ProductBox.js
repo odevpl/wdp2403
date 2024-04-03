@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -8,6 +8,7 @@ import Button from '../Button/Button';
 import Stars from '../Stars/Stars';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import clsx from 'clsx';
+import QucikView from '../../views/QuickView/QuickView';
 
 const ProductBox = ({
   id,
@@ -22,9 +23,15 @@ const ProductBox = ({
   oldPrice,
 }) => {
 
+const [showPopup, setShowPopup] = useState(false);
+
   const quickViewHandle = e => {
     e.preventDefault();
-    console.log('test');
+    setShowPopup(true);
+  };
+  const closeQuickView = e => {
+    e.preventDefault();
+    setShowPopup(false);
   };
   return (
     <div className={styles.root}>
@@ -68,6 +75,7 @@ const ProductBox = ({
           </Button>
         </div>
       </div>
+      {showPopup ? <QucikView close={closeQuickView} /> : ''}
     </div>
   );
 };
