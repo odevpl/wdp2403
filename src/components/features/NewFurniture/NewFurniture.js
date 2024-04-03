@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
 import { DeviceTypeContext } from '../../layout/MainLayout/MainLayout';
+import clsx from 'clsx';
+
 
 const NewFurniture = ({ categories, products }) => {
   const deviceType = useContext(DeviceTypeContext);
@@ -23,10 +25,10 @@ const NewFurniture = ({ categories, products }) => {
   const dots = [];
   for (let i = 0; i < pagesCount; i++) {
     dots.push(
-      <li>
+      <li key={i}>
         <a
           onClick={() => handlePageChange(i)}
-          className={i === activePage && styles.active}
+          className={clsx(i === activePage && styles.active)}
         >
           page {i}
         </a>
@@ -47,7 +49,7 @@ const NewFurniture = ({ categories, products }) => {
                 {categories.map(item => (
                   <li key={item.id}>
                     <a
-                      className={item.id === activeCategory && styles.active}
+                      className={clsx(item.id === activeCategory && styles.active)}
                       onClick={() => handleCategoryChange(item.id)}
                     >
                       {item.name}
