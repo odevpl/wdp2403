@@ -10,6 +10,7 @@ const Button = ({
   variant,
   noHover,
   className: propClassName,
+  onClickHandle,
   ...props
 }) => {
   const classes = [];
@@ -30,11 +31,24 @@ const Button = ({
     Comp = 'div';
   }
 
-  return (
-    <Comp href='#' {...props} className={classes.join(' ')}>
-      {children}
-    </Comp>
-  );
+  if (onClickHandle) {
+    return (
+      <Comp
+        onClick={e => onClickHandle(e)}
+        href='#'
+        {...props}
+        className={classes.join(' ')}
+      >
+        {children}
+      </Comp>
+    );
+  } else {
+    return (
+      <Comp href='#' {...props} className={classes.join(' ')}>
+        {children}
+      </Comp>
+    );
+  }
 };
 
 Button.propTypes = {
@@ -44,6 +58,7 @@ Button.propTypes = {
   variant: PropTypes.string,
   favorite: PropTypes.bool,
   comparision: PropTypes.bool,
+  onClickHandle: PropTypes.func,
 };
 
 export default Button;
