@@ -247,7 +247,5 @@ const ProductPage = () => {
   );
 };
 
-
-
 // ProductPage.propTypes = {};
 export default ProductPage;

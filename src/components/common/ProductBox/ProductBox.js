@@ -13,8 +13,16 @@ import Button from '../Button/Button';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import clsx from 'clsx';
 
-const ProductBox = ({ favorite, comparision, name, price, promo, stars, img, oldPrice  }) => (
-
+const ProductBox = ({
+  favorite,
+  comparision,
+  name,
+  price,
+  promo,
+  stars,
+  img,
+  oldPrice,
+}) => (
   <div className={styles.root}>
     <Link to={`/product/${name}`}>
       <div className={styles.photo}>
@@ -77,7 +85,6 @@ ProductBox.propTypes = {
   favorite: PropTypes.bool,
   comparision: PropTypes.bool,
   oldPrice: PropTypes.number,
-
 };
 
 export default ProductBox;

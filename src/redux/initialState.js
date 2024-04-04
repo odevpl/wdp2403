@@ -22,7 +22,6 @@ const initialState = {
       comparision: false,
       description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt alias modi veniam facere veritatis debitis iste dolorum accusantium molestias animi.',
-
     },
     {
       id: 'aenean-ru-bristique-2',
@@ -328,7 +327,8 @@ const initialState = {
       img:
         'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fengineeringdiscoveries.com%2Fwp-content%2Fuploads%2F2021%2F04%2F6a7b51d92b1f3efedb994ee2620ddc56.jpg&f=1&nofb=1&ipt=ef7470c63a2514124c896467566df15b07403ef62bce7ef779659ccac7316a73&ipo=images',
       favorite: false,
-      comparision: false,      description:
+      comparision: false,
+      description:
         'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt alias modi veniam facere veritatis debitis iste dolorum accusantium molestias animi.',
     },
     {
