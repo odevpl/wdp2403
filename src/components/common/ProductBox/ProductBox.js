@@ -14,7 +14,6 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import clsx from 'clsx';
 import QucikView from '../../views/QuickView/QuickView';
 
-
 const ProductBox = ({
   favorite,
   category,
@@ -43,16 +42,16 @@ const ProductBox = ({
         <div className={styles.photo}>
           <img src={img} alt={name} />
           {promo && <div className={styles.sale}>{promo}</div>}
+          <div className={styles.buttons}>
+            <Button onClickHandle={quickViewHandle} variant='small'>
+              Quick View
+            </Button>
+            <Button variant='small'>
+              <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+            </Button>
+          </div>
         </div>
       </Link>
-      <div className={styles.buttons}>
-        <Button onClickHandle={quickViewHandle} variant='small'>
-          Quick View
-        </Button>
-        <Button variant='small'>
-          <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-        </Button>
-      </div>
       <div className={styles.content}>
         <Link to={`/product/${name}`}>
           <h5>{name}</h5>
