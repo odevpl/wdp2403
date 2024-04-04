@@ -19,7 +19,9 @@ const ProductList = () => {
           <div>Banner</div>
         </div>
         <div className={styles.container}>
-          <div className='col-md-9'>ProductList</div>
+          <div className='col-md-9'>
+            <Furniture categories={allCategories} products={allProducts} />
+          </div>
           <div className='col-md-3'>
             <div>Filters</div>
             <div>by categories</div>
@@ -30,7 +32,6 @@ const ProductList = () => {
         </div>
         <div className={styles.container}>Brands</div>
       </div>
-      <Furniture categories={allCategories} products={allProducts} />
     </div>
   );
 };
