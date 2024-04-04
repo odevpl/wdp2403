@@ -4,9 +4,21 @@ import styles from './ProductList.module.scss';
 
 const ProductList = () => {
   return (
-    <div className={styles.root}>
-      <div className={styles.container}>
-        <div>Banner</div>
+    <div className='container'>
+      <div className={styles.root}>
+        <div className={styles.splash}>
+          <div className={styles.headline}>
+            <span className='col-sm'>
+              BEDROOM <strong>FURNITURE</strong>
+            </span>
+            <p className='col-sm'>
+              ALWAYS <span className={styles.discount}>25% </span> OFF OR MORE
+            </p>
+          </div>
+        </div>
+        <div className={styles.belt}>
+          <span>Home</span> {'>'} <span className={styles.destination}>Furniture</span>
+        </div>
       </div>
       <div className={styles.container}>
         <div className='col-md-9'>ProductList</div>
