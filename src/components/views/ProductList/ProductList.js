@@ -1,8 +1,8 @@
 import React from 'react';
 // import PropTypes from 'prop-types';
 import styles from './ProductList.module.scss';
-import { getAll as getAllCategories } from '../../../redux/categoriesRedux';
-import { getAll as getAllProducts } from '../../../redux/productsRedux';
+import { getAllCategories } from '../../../redux/categoriesRedux';
+import { getAllProducts } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
 import Furniture from '../../features/Furniture/Furniture';
 
