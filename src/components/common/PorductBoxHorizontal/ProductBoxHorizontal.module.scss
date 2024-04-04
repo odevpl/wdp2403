@@ -1,0 +1,97 @@
+@import "../../../styles/settings.scss";
+
+.root{
+  border-bottom: 1px solid $productboxhorizontal-line;
+  display: flex;
+  margin-bottom: 1rem;
+
+  .photo {
+    position: relative;
+    background: {
+      color: $productboxhorizontal-background-photo;
+      size: contain;
+      position: center;
+      repeat: no-repeat;
+    }
+    background-size: cover;
+    overflow: hidden;
+    align-items: flex-end;
+    margin-bottom: 1rem;
+
+    .sale {
+      position: absolute;
+      top: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $productboxhorizontal-sale;
+      border-radius: 50%;
+      color: $productboxhorizontal-sale-text;
+      padding: 30px 15px 5px 15px;
+
+    }
+
+    img{
+      object-fit: cover;
+      padding-top: 0;
+      background-size: cover;
+      width: 260px;
+      height: 260px;
+    }
+  }
+
+  .body{
+    .content {
+      padding: 0 20px 20px 20px;
+
+      h5 {
+        color: $productboxhorizontal-name-text;
+        font-size: 16px;
+        line-height: 41px;
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin-bottom: 0;
+      }
+
+      .stars {
+        padding-top: 10px;
+        a {
+          text-decoration: none;
+          color: $productboxhorizontal-stars;
+        }
+      }
+
+      .price{
+        font-weight: 700;
+        font-size: 16px;
+        padding-top: 10px;
+      }
+
+      .description{
+        padding-top: 20px;
+        color: $productboxhorizontal-description;
+      }
+    }
+
+    .line{
+      border-bottom: 1px solid $productboxhorizontal-description-line;
+      margin-left: 20px;
+    }
+
+    .actions {
+      margin: 20px 0 20px 20px;
+      & > * {
+        margin-right: 5px;
+      }
+
+      a:last-of-type {
+        padding-top: 7px;
+        padding-bottom: 7px;
+        line-height: 42px;
+        font-weight: 600;
+      }
+    }
+
+
+
+  }
+}
