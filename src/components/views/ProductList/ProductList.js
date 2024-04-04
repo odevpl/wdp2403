@@ -12,11 +12,6 @@ const ProductList = () => {
   const allCategories = useSelector(getAllCategories);
   const allProducts = useSelector(getAllProducts);
 
-  // return (
-  //   <div className={styles.root}>
-  //     <Furniture categories={allCategories} products={allProducts} />
-  //   </div>
-  // );
   return (
     <div className={styles.root}>
       <div className='container'>
