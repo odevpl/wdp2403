@@ -31,7 +31,7 @@ const QucikView = ({
     <div className={styles.root}>
       <div className={'container ' + styles.wrapper}>
         <div className={styles.close}>
-          <Button onClickHandle={close}>
+          <Button variant='outline' onClickHandle={close}>
             <FontAwesomeIcon icon={faTimes} />
           </Button>
         </div>

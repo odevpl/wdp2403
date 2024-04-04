@@ -17,7 +17,14 @@
       position: absolute;
       top: 0;
       left: 0;
-      margin-left: 5px;
+
+      a {
+        border: none;
+        &:hover{
+          background-color: $primary;
+        }
+      }
+
     }
     .contentWrapper{
       display: flex;
