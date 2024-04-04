@@ -14,6 +14,7 @@ const initialState = {
       price: 30,
       oldPrice: 38,
       stars: 2,
+      userStars: 4,
       promo: 'sale',
       newFurniture: true,
       img:
@@ -30,6 +31,7 @@ const initialState = {
       price: 30,
       oldPrice: 40,
       stars: 2,
+      userStars: 1,
       promo: 'sale',
       newFurniture: true,
       img:
@@ -46,6 +48,7 @@ const initialState = {
       price: 30,
       oldPrice: 45,
       stars: 2,
+      userStars: 5,
       promo: 'sale',
       newFurniture: true,
       img:

@@ -1,0 +1,27 @@
+@import "../../../styles/settings.scss";
+.stars {
+  a {
+    text-decoration: none;
+    color: $stars-background;
+  }
+
+  a:hover ~ a {
+  @extend %hover-effects;
+  color: $stars-background;
+  }
+
+  a:hover {
+    @extend %hover-effects;
+    color: $stars-background-hover !important;
+  }
+
+  &:hover a {
+    @extend %hover-effects;
+    color: $stars-background-hover;
+  }
+
+  a.userStars {
+    color: $stars-background-hover;
+  }
+}
+
