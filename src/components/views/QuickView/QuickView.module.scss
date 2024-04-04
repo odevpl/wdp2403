@@ -9,7 +9,7 @@
   transform: translate(-50%,-50%);
   .wrapper{
     background-color: white;
-    border: 1px solid $productboxhorizontal-description-line;
+    border: 1px solid $quickview-description-line;
     position: relative;
     padding: 0;
 
@@ -21,7 +21,7 @@
       a {
         border: none;
         &:hover{
-          background-color: $primary;
+          background-color: $qucikview-background-btn;
         }
       }
 
@@ -33,7 +33,7 @@
       .photo {
         position: relative;
         background: {
-          color: $productboxhorizontal-background-photo;
+          color: $qucikview-background-photo;
           size: contain;
           position: center;
           repeat: no-repeat;
@@ -48,9 +48,9 @@
           top: -30px;
           left: 50%;
           transform: translateX(-50%);
-          background-color: $productboxhorizontal-sale;
+          background-color: $qucikview-sale;
           border-radius: 50%;
-          color: $productboxhorizontal-sale-text;
+          color: $qucikview-sale-text;
           padding: 30px 15px 5px 15px;
 
         }
@@ -71,7 +71,7 @@
 
           h5 {
             text-align: center;
-            color: $productboxhorizontal-name-text;
+            color: $qucikview-name-text;
             font-size: 16px;
             line-height: 41px;
             letter-spacing: 1px;
@@ -83,7 +83,7 @@
             padding-top: 10px;
             a {
               text-decoration: none;
-              color: $productboxhorizontal-stars;
+              color: $quickview-stars;
             }
             span{
               font-weight: 700;
@@ -109,7 +109,7 @@
 
           .category{
             padding-top: 20px;
-            color: $productboxhorizontal-description;
+            color: $quickview-description;
             span{
               &:first-child{
                 font-weight: 700;
@@ -120,7 +120,7 @@
 
           .description{
             padding-top: 20px;
-            color: $productboxhorizontal-description;
+            color: $quickview-description;
             span{
               &:first-child{
                 display: block;
@@ -132,7 +132,7 @@
         }
 
         .line{
-          border-bottom: 1px solid $productboxhorizontal-description-line;
+          border-bottom: 1px solid $quickview-description-line;
           margin-left: 20px;
           margin-right: 20px;
         }
