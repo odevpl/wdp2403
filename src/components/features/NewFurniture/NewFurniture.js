@@ -1,9 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import { DeviceTypeContext } from '../../layout/MainLayout/MainLayout';
+import clsx from 'clsx';
+import FadeIn from 'react-fade-in/lib/FadeIn';
 
 const NewFurniture = ({ categories, products }) => {
+  const deviceType = useContext(DeviceTypeContext);
   const [activePage, setActivePage] = useState(0);
   const [activeCategory, setActiveCategory] = useState('bed');
 
@@ -21,10 +25,10 @@ const NewFurniture = ({ categories, products }) => {
   const dots = [];
   for (let i = 0; i < pagesCount; i++) {
     dots.push(
-      <li>
+      <li key={i}>
         <a
           onClick={() => handlePageChange(i)}
-          className={i === activePage && styles.active}
+          className={clsx(i === activePage && styles.active)}
         >
           page {i}
         </a>
@@ -45,7 +49,7 @@ const NewFurniture = ({ categories, products }) => {
                 {categories.map(item => (
                   <li key={item.id}>
                     <a
-                      className={item.id === activeCategory && styles.active}
+                      className={clsx(item.id === activeCategory && styles.active)}
                       onClick={() => handleCategoryChange(item.id)}
                     >
                       {item.name}
@@ -61,8 +65,10 @@ const NewFurniture = ({ categories, products }) => {
         </div>
         <div className='row'>
           {categoryProducts.slice(activePage * 8, (activePage + 1) * 8).map(item => (
-            <div key={item.id} className='col-6 col-md-4 col-lg-3'>
-              <ProductBox {...item} />
+            <div key={item.id} className={deviceType}>
+              <FadeIn>
+                <ProductBox {...item} />
+              </FadeIn>
             </div>
           ))}
         </div>
@@ -90,6 +96,7 @@ NewFurniture.propTypes = {
       newFurniture: PropTypes.bool,
     })
   ),
+  deviceType: PropTypes.string,
 };
 
 NewFurniture.defaultProps = {

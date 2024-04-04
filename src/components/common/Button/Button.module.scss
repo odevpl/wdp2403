@@ -27,6 +27,15 @@
   font-weight: 400;
 }
 
+.medium {
+  @extend .main;
+  padding: 10px 30px;
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 500;
+
+}
+
 .outline {
   display: inline-block;
   padding: 5px 10px;
@@ -40,4 +49,9 @@
     background-color: $button-icon-hover;
     color: $button-text;
   }
+}
+
+.active {
+  color: $button-icon-active;
+  background-color: $button-background-active;
 }

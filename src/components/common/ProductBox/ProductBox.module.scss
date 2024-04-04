@@ -4,16 +4,17 @@
   background-color: $productbox-background;
   border: 1px solid $productbox-border;
   margin-bottom: 2rem;
+  position: relative;
 
   .photo {
     position: relative;
-    padding: 80% 10px 0 10px;
     background: {
       color: $productbox-background-photo;
       size: contain;
       position: center;
       repeat: no-repeat;
     }
+    background-size: cover;
     overflow: hidden;
     align-items: flex-end;
 
@@ -29,15 +30,38 @@
     }
 
     .buttons {
-      display: flex;
+      display: none;
       justify-content: space-between;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+    }
+    img{
+      object-fit: cover;
+      padding-top: 0;
+      background-size: cover;
+      width: 260px;
+      height: 260px;
+    }
+  }
+
+  &:hover{
+    .buttons {
+      display: flex;
+    }
+    .actions{
+      .price{
+        :last-child{
+          @extend %hover-effects;
+          background-color: $primary;
+        }
+      }
     }
   }
 
   .content {
     text-align: center;
     padding: 20px;
-
     h5 {
       color: $primary;
       font-size: 16px;
@@ -74,5 +98,20 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+  }
+  .price{
+    display: flex;
+    align-items: center;
+    .oldPrice{
+      display: block;
+      padding-right: 5px;
+      text-decoration: line-through;
+      font-size: 15px;
+      color: #a5a5a5;
+      font-weight: 300;
+      &.active{
+        display: none;
+      }
+    }
   }
 }
