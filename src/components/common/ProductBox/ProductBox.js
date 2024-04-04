@@ -13,6 +13,7 @@ import QucikView from '../../views/QuickView/QuickView';
 const ProductBox = ({
   id,
   favorite,
+  category,
   comparision,
   name,
   price,
@@ -21,9 +22,9 @@ const ProductBox = ({
   userStars,
   img,
   oldPrice,
+  description,
 }) => {
-
-const [showPopup, setShowPopup] = useState(false);
+  const [showPopup, setShowPopup] = useState(false);
 
   const quickViewHandle = e => {
     e.preventDefault();
@@ -75,11 +76,26 @@ const [showPopup, setShowPopup] = useState(false);
           </Button>
         </div>
       </div>
-      {showPopup ? <QucikView close={closeQuickView} /> : ''}
+      {showPopup ? (
+        <QucikView
+          close={closeQuickView}
+          name={name}
+          favorite={favorite}
+          comparision={comparision}
+          price={price}
+          promo={promo}
+          stars={stars}
+          img={img}
+          oldPrice={oldPrice}
+          description={description ? description : 'no description'}
+          category={category}
+        />
+      ) : (
+        ''
+      )}
     </div>
   );
 };
-
 
 ProductBox.propTypes = {
   children: PropTypes.node,
@@ -93,6 +109,8 @@ ProductBox.propTypes = {
   favorite: PropTypes.bool,
   comparision: PropTypes.bool,
   oldPrice: PropTypes.number,
+  description: PropTypes.string,
+  category: PropTypes.string,
 };
 
 export default ProductBox;
