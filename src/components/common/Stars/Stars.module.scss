@@ -2,26 +2,26 @@
 .stars {
   a {
     text-decoration: none;
-    color: $productbox-stars;
+    color: $stars-background;
   }
 
   a:hover ~ a {
   @extend %hover-effects;
-  color: $productbox-stars;
+  color: $stars-background;
   }
 
   a:hover {
     @extend %hover-effects;
-    color: $productbox-stars-hover !important;
+    color: $stars-background-hover !important;
   }
 
   &:hover a {
     @extend %hover-effects;
-    color: $productbox-stars-hover;
+    color: $stars-background-hover;
   }
 
   a.userStars {
-    color: $productbox-stars-hover;
+    color: $stars-background-hover;
   }
 }
 
