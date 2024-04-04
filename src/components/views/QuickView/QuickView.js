@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import clsx from 'clsx';
 
 const QucikView = ({
   close,
@@ -41,9 +42,16 @@ const QucikView = ({
                 <h5>{name}</h5>
               </Link>
               <div className={styles.price}>
-                <span>$ {price}</span>
+                <span>Price: </span>
+                <span
+                  className={clsx(oldPrice === 0 && styles.active, styles.oldPrice)}
+                >
+                  $ {' ' + oldPrice}
+                </span>
+                <span>$ {' ' + price}</span>
               </div>
               <div className={styles.stars}>
+                <span>Rating: </span>
                 {[1, 2, 3, 4, 5].map(i => (
                   <a key={i} href='#'>
                     {i <= stars ? (
@@ -54,8 +62,13 @@ const QucikView = ({
                   </a>
                 ))}
               </div>
+              <div className={styles.category}>
+                <span>Category: </span>
+                <span>{' ' + category}</span>
+              </div>
               <div className={styles.description}>
-                <span>{description}</span>
+                <span>Description: </span>
+                <span>{' ' + description}</span>
               </div>
             </div>
             <div className={styles.line}></div>
