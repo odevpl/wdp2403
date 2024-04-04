@@ -12,8 +12,33 @@ import {
 import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
+import clsx from 'clsx';
+import { useState } from 'react';
+import QucikView from '../../views/QuickView/QuickView';
 
-const ProductBoxHorizontal = ({ name, price, promo, stars, img, description }) => {
+const ProductBoxHorizontal = ({
+  favorite,
+  comparision,
+  name,
+  price,
+  promo,
+  stars,
+  img,
+  oldPrice,
+  description,
+  category,
+}) => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const quickViewHandle = e => {
+    e.preventDefault();
+    setShowPopup(true);
+  };
+  const closeQuickView = e => {
+    e.preventDefault();
+    setShowPopup(false);
+  };
+
   return (
     <div className={styles.root}>
       <Link to={`/product/${name}`}>
@@ -28,7 +53,10 @@ const ProductBoxHorizontal = ({ name, price, promo, stars, img, description }) =
             <h5>{name}</h5>
           </Link>
           <div className={styles.price}>
-            <span>$ {price}</span>
+            <span className={clsx(oldPrice === 0 && styles.active, styles.oldPrice)}>
+              $ {' ' + oldPrice}
+            </span>
+            <span>$ {' ' + price}</span>
           </div>
           <div className={styles.stars}>
             {[1, 2, 3, 4, 5].map(i => (
@@ -47,13 +75,13 @@ const ProductBoxHorizontal = ({ name, price, promo, stars, img, description }) =
         </div>
         <div className={styles.line}></div>
         <div className={styles.actions}>
-          <Button variant='outline'>
+          <Button variant='outline' favorite={favorite}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button variant='outline' comparision={comparision}>
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
-          <Button variant='outline'>
+          <Button variant='outline' onClickHandle={quickViewHandle}>
             <FontAwesomeIcon icon={faSearch}>Quick View</FontAwesomeIcon>
           </Button>
           <Button variant='small'>
@@ -61,6 +89,23 @@ const ProductBoxHorizontal = ({ name, price, promo, stars, img, description }) =
           </Button>
         </div>
       </div>
+      {showPopup ? (
+        <QucikView
+          close={closeQuickView}
+          name={name}
+          favorite={favorite}
+          comparision={comparision}
+          price={price}
+          promo={promo}
+          stars={stars}
+          img={img}
+          oldPrice={oldPrice}
+          description={description ? description : 'no description'}
+          category={category}
+        />
+      ) : (
+        ''
+      )}
     </div>
   );
 };
@@ -72,7 +117,11 @@ ProductBoxHorizontal.propTypes = {
   promo: PropTypes.string,
   stars: PropTypes.number,
   img: PropTypes.string,
+  favorite: PropTypes.bool,
+  comparision: PropTypes.bool,
+  oldPrice: PropTypes.number,
   description: PropTypes.string,
+  category: PropTypes.string,
 };
 
 export default ProductBoxHorizontal;
