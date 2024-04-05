@@ -15,14 +15,17 @@ import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import clsx from 'clsx';
 import { useState } from 'react';
 import QucikView from '../../views/QuickView/QuickView';
+import Stars from '../Stars/Stars';
 
 const ProductBoxHorizontal = ({
+  id,
   favorite,
   comparision,
   name,
   price,
   promo,
   stars,
+  userStars,
   img,
   oldPrice,
   description,
@@ -59,15 +62,7 @@ const ProductBoxHorizontal = ({
             <span>$ {' ' + price}</span>
           </div>
           <div className={styles.stars}>
-            {[1, 2, 3, 4, 5].map(i => (
-              <a key={i} href='#'>
-                {i <= stars ? (
-                  <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                ) : (
-                  <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                )}
-              </a>
-            ))}
+            <Stars stars={stars} userStars={userStars} id={id} />
           </div>
           <div className={styles.description}>
             <span>{description}</span>
@@ -92,6 +87,8 @@ const ProductBoxHorizontal = ({
       {showPopup ? (
         <QucikView
           close={closeQuickView}
+          id={id}
+          userStars={userStars}
           name={name}
           favorite={favorite}
           comparision={comparision}
@@ -112,10 +109,12 @@ const ProductBoxHorizontal = ({
 
 ProductBoxHorizontal.propTypes = {
   children: PropTypes.node,
+  id: PropTypes.string,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,
   stars: PropTypes.number,
+  userStars: PropTypes.number,
   img: PropTypes.string,
   favorite: PropTypes.bool,
   comparision: PropTypes.bool,
