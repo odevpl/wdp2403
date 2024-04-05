@@ -5,16 +5,18 @@ import Button from '../../common/Button/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
   faTimes,
-  faStar,
   faExchangeAlt,
   faShoppingBasket,
   faSearch,
 } from '@fortawesome/free-solid-svg-icons';
-import { faStar as farStar, faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import clsx from 'clsx';
+import Stars from '../../common/Stars/Stars';
 
 const QucikView = ({
+  id,
+  userStars,
   close,
   favorite,
   comparision,
@@ -50,17 +52,9 @@ const QucikView = ({
                 </span>
                 <span>$ {' ' + price}</span>
               </div>
-              <div className={styles.stars}>
+              <div>
                 <span>Rating: </span>
-                {[1, 2, 3, 4, 5].map(i => (
-                  <a key={i} href='#'>
-                    {i <= stars ? (
-                      <FontAwesomeIcon icon={faStar}>{i} stars</FontAwesomeIcon>
-                    ) : (
-                      <FontAwesomeIcon icon={farStar}>{i} stars</FontAwesomeIcon>
-                    )}
-                  </a>
-                ))}
+                <Stars stars={stars} userStars={userStars} id={id} />
               </div>
               <div className={styles.category}>
                 <span>Category: </span>
@@ -107,6 +101,8 @@ export default QucikView;
 
 QucikView.propTypes = {
   close: PropTypes.func,
+  id: PropTypes.string,
+  userStars: PropTypes.number,
   name: PropTypes.string,
   price: PropTypes.number,
   promo: PropTypes.string,

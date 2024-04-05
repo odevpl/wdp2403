@@ -79,6 +79,8 @@ const ProductBox = ({
       {showPopup ? (
         <QucikView
           close={closeQuickView}
+          id={id}
+          userStars={userStars}
           name={name}
           favorite={favorite}
           comparision={comparision}
