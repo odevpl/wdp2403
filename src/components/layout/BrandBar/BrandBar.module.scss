@@ -1,0 +1,53 @@
+@import '../../../styles/settings.scss';
+
+.brandsBar {
+  height: 142px;
+  border-top: 1px solid $brandbar-border;
+  border-bottom: 1px solid $brandbar-border;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 52px;
+
+  .arrowBox {
+    background-color: $brandbar-arrow-background;
+    width: 33px;
+    height: 93px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .icon {
+      font-size: 11px;
+      color: $brandbar-arrow;
+    }
+  }
+
+  .arrowLeft {
+    margin-right: 30px;
+  }
+
+  .arrowRight {
+    margin-left: 30px;
+  }
+
+  .brands {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    gap: 30px;
+
+    .brand {
+      width: 137px;
+      height: 93px;
+      border: 1px solid $brandbar-border;
+      list-style: none;
+
+      img {
+        width: 135px;
+        height: 91px;
+        background-size: contain;
+      }
+    }
+  }
+}
