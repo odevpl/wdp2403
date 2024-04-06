@@ -29,7 +29,6 @@ const QucikView = ({
   img,
   description,
 }) => {
-  console.log('favorite:', favorite, typeof favorite);
   return (
     <div className={styles.root}>
       <div className={'container ' + styles.wrapper}>
