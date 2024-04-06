@@ -36,20 +36,20 @@ const ProductBox = ({
   };
   return (
     <div className={styles.root}>
-      <Link to={`/product/${name}`}>
-        <div className={styles.photo}>
+      <div className={styles.photo}>
+        <Link to={`/product/${name}`}>
           <img src={img} alt={name} />
           {promo && <div className={styles.sale}>{promo}</div>}
-          <div className={styles.buttons}>
-            <Button onClickHandle={quickViewHandle} variant='small'>
-              Quick View
-            </Button>
-            <Button variant='small'>
-              <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-            </Button>
-          </div>
+        </Link>
+        <div className={styles.buttons}>
+          <Button onClickHandle={quickViewHandle} variant='small'>
+            Quick View
+          </Button>
+          <Button variant='small'>
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+          </Button>
         </div>
-      </Link>
+      </div>
       <div className={styles.content}>
         <Link to={`/product/${name}`}>
           <h5>{name}</h5>
