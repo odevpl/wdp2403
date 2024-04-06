@@ -39,6 +39,12 @@ const QucikView = ({
           </Button>
         </div>
         <div className={styles.contentWrapper}>
+          <Link to={`/product/${name}`}>
+            <div className={styles.photo}>
+              <img src={img} alt={name} />
+              {promo && <div className={styles.sale}>{promo}</div>}
+            </div>
+          </Link>
           <div className={styles.body}>
             <div className={styles.content}>
               <Link to={`/product/${name}`}>
@@ -53,7 +59,7 @@ const QucikView = ({
                 </span>
                 <span>$ {' ' + price}</span>
               </div>
-              <div>
+              <div className={styles.stars}>
                 <span>Rating: </span>
                 <Stars stars={stars} userStars={userStars} id={id} />
               </div>
@@ -82,12 +88,6 @@ const QucikView = ({
               </Button>
             </div>
           </div>
-          <Link to={`/product/${name}`}>
-            <div className={styles.photo}>
-              <img src={img} alt={name} />
-              {promo && <div className={styles.sale}>{promo}</div>}
-            </div>
-          </Link>
         </div>
       </div>
     </div>

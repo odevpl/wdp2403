@@ -17,9 +17,11 @@
       position: absolute;
       top: 0;
       left: 0;
+      z-index: 1;
 
       a {
         border: none;
+        font-size: 20px;
         &:hover{
           background-color: $qucikview-background-btn;
         }
