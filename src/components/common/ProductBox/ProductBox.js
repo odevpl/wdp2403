@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -12,10 +12,12 @@ import { useDispatch } from 'react-redux';
 import { addToCompare } from '../../../redux/productsRedux';
 import { getCompareProducts } from '../../../redux/productsRedux';
 import { useSelector } from 'react-redux';
+import QucikView from '../../views/QuickView/QuickView';
 
 const ProductBox = ({
   id,
   favorite,
+  category,
   comparision,
   name,
   price,
@@ -24,7 +26,19 @@ const ProductBox = ({
   userStars,
   img,
   oldPrice,
+  description,
 }) => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const quickViewHandle = e => {
+    e.preventDefault();
+    setShowPopup(true);
+  };
+  const closeQuickView = e => {
+    e.preventDefault();
+    setShowPopup(false);
+  };
+  
   const dispatch = useDispatch();
   const compareProducts = useSelector(state => getCompareProducts(state));
 
@@ -44,7 +58,7 @@ const ProductBox = ({
       return;
     }
   };
-
+  
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -53,7 +67,9 @@ const ProductBox = ({
           {promo && <div className={styles.sale}>{promo}</div>}
         </Link>
         <div className={styles.buttons}>
-          <Button variant='small'>Quick View</Button>
+          <Button onClickHandle={quickViewHandle} variant='small'>
+            Quick View
+          </Button>
           <Button variant='small'>
             <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
           </Button>
@@ -89,6 +105,25 @@ const ProductBox = ({
           </Button>
         </div>
       </div>
+      {showPopup ? (
+        <QucikView
+          close={closeQuickView}
+          id={id}
+          userStars={userStars}
+          name={name}
+          favorite={favorite}
+          comparision={comparision}
+          price={price}
+          promo={promo}
+          stars={stars}
+          img={img}
+          oldPrice={oldPrice}
+          description={description ? description : 'no description'}
+          category={category}
+        />
+      ) : (
+        ''
+      )}
     </div>
   );
 };
@@ -105,6 +140,8 @@ ProductBox.propTypes = {
   favorite: PropTypes.bool,
   comparision: PropTypes.bool,
   oldPrice: PropTypes.number,
+  description: PropTypes.string,
+  category: PropTypes.string,
 };
 
 export default ProductBox;

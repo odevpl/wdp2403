@@ -1,0 +1,154 @@
+@import '../../../styles/settings.scss';
+
+.root{
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  color: black;
+  z-index: 2;
+  transform: translate(-50%,-50%);
+  .wrapper{
+    background-color: white;
+    border: 1px solid $quickview-description-line;
+    position: relative;
+    padding: 0;
+
+    .close{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+
+      a {
+        border: none;
+        font-size: 20px;
+        &:hover{
+          background-color: $qucikview-background-btn;
+        }
+      }
+
+    }
+    .contentWrapper{
+      display: flex;
+      margin-bottom: 1rem;
+
+      .photo {
+        position: relative;
+        background: {
+          color: $qucikview-background-photo;
+          size: contain;
+          position: center;
+          repeat: no-repeat;
+        }
+        background-size: cover;
+        overflow: hidden;
+        align-items: flex-end;
+        margin-bottom: 1rem;
+
+        .sale {
+          position: absolute;
+          top: -30px;
+          left: 50%;
+          transform: translateX(-50%);
+          background-color: $qucikview-sale;
+          border-radius: 50%;
+          color: $qucikview-sale-text;
+          padding: 30px 15px 5px 15px;
+
+        }
+
+        img{
+          object-fit: cover;
+          padding-top: 0;
+          background-size: cover;
+          width: 260px;
+          height: 260px;
+        }
+      }
+
+      .body{
+        .content {
+          padding: 0 20px 20px 20px;
+
+
+          h5 {
+            text-align: center;
+            color: $qucikview-name-text;
+            font-size: 16px;
+            line-height: 41px;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 0;
+          }
+
+          .stars {
+            padding-top: 10px;
+            span{
+              font-weight: 700;
+              font-size: 16px;
+            }
+          }
+
+          .price{
+            font-weight: 700;
+            font-size: 16px;
+            padding-top: 10px;
+            .oldPrice{
+              padding-right: 5px;
+              text-decoration: line-through;
+              font-size: 15px;
+              color: #a5a5a5;
+              font-weight: 300;
+              &.active{
+                display: none;
+              }
+            }
+          }
+
+          .category{
+            padding-top: 20px;
+            color: $quickview-description;
+            span{
+              &:first-child{
+                font-weight: 700;
+                font-size: 16px;
+              }
+            }
+          }
+
+          .description{
+            padding-top: 20px;
+            color: $quickview-description;
+            span{
+              &:first-child{
+                display: block;
+                font-weight: 700;
+                font-size: 16px;
+              }
+            }
+          }
+        }
+
+        .line{
+          border-bottom: 1px solid $quickview-description-line;
+          margin-left: 20px;
+          margin-right: 20px;
+        }
+
+        .actions {
+          margin: 20px 0 20px 20px;
+          & > * {
+            margin-right: 5px;
+          }
+
+          a:last-of-type {
+            padding-top: 7px;
+            padding-bottom: 7px;
+            line-height: 42px;
+            font-weight: 600;
+          }
+        }
+      }
+    }
+  }
+}
