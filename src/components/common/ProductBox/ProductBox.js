@@ -8,6 +8,10 @@ import Button from '../Button/Button';
 import Stars from '../Stars/Stars';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import clsx from 'clsx';
+import { useDispatch } from 'react-redux';
+import { addToCompare } from '../../../redux/productsRedux';
+import { getCompareProducts } from '../../../redux/productsRedux';
+import { useSelector } from 'react-redux';
 
 const ProductBox = ({
   id,
@@ -20,49 +24,74 @@ const ProductBox = ({
   userStars,
   img,
   oldPrice,
-}) => (
-  <div className={styles.root}>
-    <div className={styles.photo}>
-      <Link to={`/product/${name}`}>
-        <img src={img} alt={name} />
-        {promo && <div className={styles.sale}>{promo}</div>}
-      </Link>
-      <div className={styles.buttons}>
-        <Button variant='small'>Quick View</Button>
-        <Button variant='small'>
-          <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
-        </Button>
-      </div>
-    </div>
+}) => {
+  const dispatch = useDispatch();
+  const compareProducts = useSelector(state => getCompareProducts(state));
 
-    <div className={styles.content}>
-      <Link to={`/product/${name}`}>
-        <h5>{name}</h5>
-      </Link>
-      <Stars stars={stars} userStars={userStars} id={id} />
-    </div>
-    <div className={styles.line}></div>
-    <div className={styles.actions}>
-      <div className={styles.outlines}>
-        <Button variant='outline' favorite={favorite}>
-          <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
-        </Button>
-        <Button variant='outline' comparision={comparision}>
-          <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
-        </Button>
+  const isProductAlreadyCompared = compareProducts.some(product => product.id === id);
+
+  const handleAddToCompare = e => {
+    e.preventDefault();
+
+    if (!isProductAlreadyCompared) {
+      if (compareProducts.length < 4) {
+        dispatch(addToCompare(id));
+      } else {
+        alert('Maximum 4 products can be added to comparision.');
+      }
+    } else {
+      alert('This product is already included in comparision.');
+      return;
+    }
+  };
+
+  return (
+    <div className={styles.root}>
+      <div className={styles.photo}>
+        <Link to={`/product/${name}`}>
+          <img src={img} alt={name} />
+          {promo && <div className={styles.sale}>{promo}</div>}
+        </Link>
+        <div className={styles.buttons}>
+          <Button variant='small'>Quick View</Button>
+          <Button variant='small'>
+            <FontAwesomeIcon icon={faShoppingBasket}></FontAwesomeIcon> ADD TO CART
+          </Button>
+        </div>
       </div>
-      <div className={styles.price}>
-        <span className={clsx(oldPrice === 0 && styles.active, styles.oldPrice)}>
-          {' '}
-          $ {oldPrice}
-        </span>
-        <Button noHover variant='small'>
-          $ {price}
-        </Button>
+      <div className={styles.content}>
+        <Link to={`/product/${name}`}>
+          <h5>{name}</h5>
+        </Link>
+        <Stars stars={stars} userStars={userStars} id={id} />
+      </div>
+      <div className={styles.line}></div>
+      <div className={styles.actions}>
+        <div className={styles.outlines}>
+          <Button variant='outline' favorite={favorite}>
+            <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
+          </Button>
+          <Button
+            variant='outline'
+            comparision={comparision}
+            onClick={handleAddToCompare}
+          >
+            <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
+          </Button>
+        </div>
+        <div className={styles.price}>
+          <span className={clsx(oldPrice === 0 && styles.active, styles.oldPrice)}>
+            {' '}
+            $ {oldPrice}
+          </span>
+          <Button noHover variant='small'>
+            $ {price}
+          </Button>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 ProductBox.propTypes = {
   children: PropTypes.node,
