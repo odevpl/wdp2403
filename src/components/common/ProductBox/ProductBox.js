@@ -8,6 +8,10 @@ import Button from '../Button/Button';
 import Stars from '../Stars/Stars';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
 import clsx from 'clsx';
+import { useDispatch } from 'react-redux';
+import { addToCompare } from '../../../redux/productsRedux';
+import { getCompareProducts } from '../../../redux/productsRedux';
+import { useSelector } from 'react-redux';
 import QucikView from '../../views/QuickView/QuickView';
 
 const ProductBox = ({
@@ -34,6 +38,27 @@ const ProductBox = ({
     e.preventDefault();
     setShowPopup(false);
   };
+  
+  const dispatch = useDispatch();
+  const compareProducts = useSelector(state => getCompareProducts(state));
+
+  const isProductAlreadyCompared = compareProducts.some(product => product.id === id);
+
+  const handleAddToCompare = e => {
+    e.preventDefault();
+
+    if (!isProductAlreadyCompared) {
+      if (compareProducts.length < 4) {
+        dispatch(addToCompare(id));
+      } else {
+        alert('Maximum 4 products can be added to comparision.');
+      }
+    } else {
+      alert('This product is already included in comparision.');
+      return;
+    }
+  };
+  
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -62,7 +87,11 @@ const ProductBox = ({
           <Button variant='outline' favorite={favorite}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
-          <Button variant='outline' comparision={comparision}>
+          <Button
+            variant='outline'
+            comparision={comparision}
+            onClick={handleAddToCompare}
+          >
             <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
           </Button>
         </div>

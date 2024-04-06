@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './NewFurniture.module.scss';
 import ProductBox from '../../common/ProductBox/ProductBox';
+import StickyBar from '../StickyBar/StickyBar';
 import { DeviceTypeContext } from '../../layout/MainLayout/MainLayout';
 import clsx from 'clsx';
 import FadeIn from 'react-fade-in/lib/FadeIn';
@@ -73,6 +74,7 @@ const NewFurniture = ({ categories, products }) => {
           ))}
         </div>
       </div>
+      <StickyBar />
     </div>
   );
 };
