@@ -29,6 +29,7 @@ const QucikView = ({
   img,
   description,
 }) => {
+  console.log('favorite:', favorite, typeof favorite);
   return (
     <div className={styles.root}>
       <div className={'container ' + styles.wrapper}>
@@ -67,15 +68,11 @@ const QucikView = ({
             </div>
             <div className={styles.line}></div>
             <div className={styles.actions}>
-              <Button variant='outline'>
-                <FontAwesomeIcon icon={faHeart} favorite={favorite}>
-                  Favorite
-                </FontAwesomeIcon>
+              <Button variant='outline' favorite={true}>
+                <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
               </Button>
-              <Button variant='outline'>
-                <FontAwesomeIcon icon={faExchangeAlt} comparision={comparision}>
-                  Add to compare
-                </FontAwesomeIcon>
+              <Button variant='outline' comparision={comparision}>
+                <FontAwesomeIcon icon={faExchangeAlt}>Add to compare</FontAwesomeIcon>
               </Button>
               <Button variant='outline'>
                 <FontAwesomeIcon icon={faSearch}>Quick View</FontAwesomeIcon>
