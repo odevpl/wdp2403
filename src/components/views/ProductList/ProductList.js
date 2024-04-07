@@ -31,7 +31,7 @@ const ProductList = () => {
             <span className={styles.destination}>Furniture</span>
           </div>
         </div>
-        <div className={styles.container}>
+        <div className={styles.filtersContainer}>
           <div className='col-md-9'>
             <Furniture categories={allCategories} products={allProducts} />
           </div>

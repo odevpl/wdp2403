@@ -1,25 +1,26 @@
 @import "../../../styles/settings.scss";
 
-.container{
+.filtersContainer{
   display: flex;
   justify-content: center;
   width: 100%;
-  flex-direction: column;
 }
 
 .root {
-  color: white;
 
   .splash{
     background-color: $grey;
+    color: white;
     height: 195px;
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
     .headline{
       font-size: 50px;
     }
     p{
+      color: white;
       display: flex;
       letter-spacing: 15px;
       font-size: 19px;
