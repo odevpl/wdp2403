@@ -12,13 +12,20 @@
   z-index: 1;
   border-top: 2px solid $stickybar-border;
 
+  .compareProductWrapper {
+    position: relative;
+    height: 95%;
+    width: 15%;
+    border: 2px solid $stickybar-border;
+    z-index: 2;
+  }
+
   .compareImage {
     position: relative;
-    height: 90%;
-    width: 10%;
+    height: 60%;
+    width: 100%;
     background-size: cover;
     background-position: center center;
-    border: 2px solid $stickybar-border;
     z-index: 2;
 
     &:hover {
@@ -33,6 +40,51 @@
       top: 0;
       right: 5px;
       z-index: 3;
+    }
+  }
+
+  .compareData {
+    position: relative;
+    height: 40%;
+    width: 100%;
+    z-index: 2;
+  }
+
+
+
+
+
+  .content {
+    text-align: center;
+    padding: 5px;
+    h5 {
+      color: $primary;
+      font-size: 12px;
+      line-height: 16px;
+      letter-spacing: 1px;
+    }
+
+  }
+
+  .actions {
+    padding: 0px 5px 5px 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .price{
+    display: flex;
+    align-items: center;
+    .oldPrice{
+      display: block;
+      padding-right: 5px;
+      text-decoration: line-through;
+      font-size: 15px;
+      color: #a5a5a5;
+      font-weight: 300;
+      &.active{
+        display: none;
+      }
     }
   }
 }
