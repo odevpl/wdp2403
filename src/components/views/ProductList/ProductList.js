@@ -32,10 +32,10 @@ const ProductList = () => {
           </div>
         </div>
         <div className={styles.filtersContainer}>
-          <div className='col-md-9'>
+          <div className='col-md-9 px-0 mt-4'>
             <Furniture categories={allCategories} products={allProducts} />
           </div>
-          <div className='col-md-3'>
+          <div className='col-md-3 mt-5'>
             <div>Filters</div>
             <div>by categories</div>
             <div>by color</div>
