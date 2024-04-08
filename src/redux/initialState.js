@@ -147,6 +147,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      img:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimgdataserver.com%2Fitems%2Fhooker-ss-chaise-lounge-living-room-chair-hooss641cs097_zm.jpg&f=1&nofb=1&ipt=bd6b7cfe6eca7088561c9baa6d568d52ae99742567175e271f666f5718941ecd&ipo=images',
       favorite: false,
       comparision: false,
       description:
@@ -193,6 +195,8 @@ const initialState = {
       stars: 2,
       promo: 'sale',
       newFurniture: true,
+      img:
+        'https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fimgdataserver.com%2Fitems%2Fhooker-ss-chaise-lounge-living-room-chair-hooss641cs097_zm.jpg&f=1&nofb=1&ipt=bd6b7cfe6eca7088561c9baa6d568d52ae99742567175e271f666f5718941ecd&ipo=images',
       favorite: false,
       comparision: false,
       description:
