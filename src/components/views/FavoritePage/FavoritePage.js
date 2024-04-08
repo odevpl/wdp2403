@@ -1,15 +1,25 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { getProductsByFavorite } from '../../../redux/productsRedux';
+import { getAllProducts } from '../../../redux/productsRedux';
 import ProductBox from '../../common/ProductBox/ProductBox';
 
 const FavoritePage = () => {
-  const favoriteProducts = useSelector(state => getProductsByFavorite(state));
+  const favoriteProducts = useSelector(state => getAllProducts(state));
+
   return (
     <div className='container'>
-      {favoriteProducts.map(product => (
-        <ProductBox key={product.id} {...product} />
-      ))}
+      <div className='row mt-4'>
+        {favoriteProducts.map(product => {
+          if (localStorage.getItem(`favorite${product.id}`) === 'true') {
+            return (
+              <div className='mx-3 col-md-3'>
+                <ProductBox key={product.id} {...product} />
+              </div>
+            );
+          }
+          return '';
+        })}
+      </div>
     </div>
   );
 };
