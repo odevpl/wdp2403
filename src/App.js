@@ -13,6 +13,7 @@ import ProductPage from './components/views/ProductPage/ProductPage';
 import BlogPage from './components/views/BlogPage/BlogPage';
 import FavoritePage from './components/views/FavoritePage/FavoritePage';
 import LoginPage from './components/views/LoginPage/LoginPage';
+import RegisterPage from './components/views/RegisterPage/RegisterPage';
 
 const App = () => (
   <Provider store={store}>
@@ -26,6 +27,7 @@ const App = () => (
           <Route exact path={'/product/'} component={ProductPage} />
           <Route exact path={'/favorite'} component={FavoritePage} />
           <Route exact path={'/login'} component={LoginPage} />
+          <Route exact path={'/register'} component={RegisterPage} />
         </Switch>
       </MainLayout>
     </BrowserRouter>
