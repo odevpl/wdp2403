@@ -9,8 +9,8 @@
 .root {
 
   .splash{
-    background-color: $grey;
-    color: white;
+    background-color: $header-topbar-bg;
+    color: $text-color;
     height: 195px;
     display: flex;
     justify-content: center;
@@ -20,14 +20,14 @@
       font-size: 50px;
     }
     p{
-      color: white;
+      color: $text-color;
       display: flex;
       letter-spacing: 15px;
       font-size: 19px;
     }
   }
   .discount{
-    color: $orange;
+    color: $primary;
     padding-inline: 5px;
     font-weight: bold;
     letter-spacing: 5px;
@@ -36,7 +36,7 @@
 
 }
 .belt{
-  background-color: $veryLightGrey;
+  background-color: $belt;
   height: 50px;
   display: flex;
   align-items: center;
@@ -44,7 +44,7 @@
     margin-inline: 15px;
   }
   .destination{
-    color: $orange;
+    color: $primary;
     font-weight: bold;
   }
 }
