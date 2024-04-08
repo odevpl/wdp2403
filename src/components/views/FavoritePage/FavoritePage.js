@@ -7,7 +7,6 @@ const FavoritePage = () => {
   const favoriteProducts = useSelector(state => getAllProducts(state));
   return (
     <div className='container'>
-      <div></div>
       <div className='row mt-5'>
         {favoriteProducts.map(product => {
           if (localStorage.getItem(`favorite${product.id}`) === 'true') {
