@@ -5,14 +5,13 @@ import ProductBox from '../../common/ProductBox/ProductBox';
 
 const FavoritePage = () => {
   const favoriteProducts = useSelector(state => getAllProducts(state));
-
   return (
     <div className='container'>
-      <div className='row mt-4'>
+      <div className='row mt-5'>
         {favoriteProducts.map(product => {
           if (localStorage.getItem(`favorite${product.id}`) === 'true') {
             return (
-              <div className='mx-3 col-md-3'>
+              <div className='col-md-3'>
                 <ProductBox key={product.id} {...product} />
               </div>
             );
