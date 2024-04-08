@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -38,11 +38,21 @@ const ProductBox = ({
     e.preventDefault();
     setShowPopup(false);
   };
-  
+
   const dispatch = useDispatch();
   const compareProducts = useSelector(state => getCompareProducts(state));
 
   const isProductAlreadyCompared = compareProducts.some(product => product.id === id);
+
+  const [localFavorite, setLocalFavorite] = useState(favorite);
+
+  useEffect(() => {
+    if (localStorage.getItem(`favorite${id}`) === 'true') {
+      setLocalFavorite(true);
+    } else if (localStorage.getItem(`favorite${id}`) === 'false') {
+      setLocalFavorite(false);
+    }
+  }, [id]);
 
   const handleAddToCompare = e => {
     e.preventDefault();
@@ -58,7 +68,13 @@ const ProductBox = ({
       return;
     }
   };
-  
+
+  const favoriteHandle = e => {
+    e.preventDefault();
+    setLocalFavorite(!localFavorite);
+    localStorage.setItem(`favorite${id}`, !localFavorite);
+  };
+
   return (
     <div className={styles.root}>
       <div className={styles.photo}>
@@ -84,7 +100,7 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' favorite={favorite}>
+          <Button variant='outline' favorite={localFavorite} onClick={favoriteHandle}>
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
