@@ -5,7 +5,7 @@ import Button from '../../common/Button/Button';
 const LoginPage = () => {
   return (
     <div className={styles.root}>
-      <div className='container'>
+      <div className='container d-flex justify-content-center'>
         <div className={styles.loginWrapper}>
           <form>
             <div className={styles.login}>
@@ -18,9 +18,13 @@ const LoginPage = () => {
             </div>
             <div className={styles.remember}>
               <p>Nie pamiętasz hasła?</p>
-              <a href='#'>Przypomnij hasło</a>
+              <Button href='#'>Przypomnij hasło.</Button>
             </div>
-            <Button href='/'>Zaloguj się</Button>
+            <div className={styles.button}>
+              <Button variant='main' type='submit' href='/'>
+                Zaloguj się
+              </Button>
+            </div>
           </form>
         </div>
       </div>

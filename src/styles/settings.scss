@@ -34,6 +34,7 @@ $shadowGrey: #939393;
 $superShadowGrey: #d7d7d7;
 $semiDarkGrey: #a0a0a0;
 $darkerGrey: #676767;
+$linearGradient: linear-gradient(rgb(243, 243, 56), $orange);
 
 /* VARIABLES TO USE IN COMPONENTS */
 
@@ -187,3 +188,9 @@ $qucikview-sale-text: $white;
 $qucikview-name-text: $orange;
 $quickview-stars: $nero;
 $quickview-description: $darkerGrey;
+
+/* Login Page */
+$loginpage-border: $grey-border;
+$loginpage-primary: $primary;
+$loginpage-dark: $black;
+$loginpage-button:  $linearGradient;
