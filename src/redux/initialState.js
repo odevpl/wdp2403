@@ -1561,6 +1561,36 @@ const initialState = {
       name: 'Brand 6',
       img: 'https://i.postimg.cc/26B60KrW/brand-6.jpg',
     },
+    {
+      id: 'brand-7',
+      name: 'Brand 7',
+      img: 'https://i.postimg.cc/MHCGkbZL/brand-5.jpg',
+    },
+    {
+      id: 'brand-8',
+      name: 'Brand 8',
+      img: 'https://i.postimg.cc/4yqYfRPB/brand-2.jpg',
+    },
+    {
+      id: 'brand-9',
+      name: 'Brand 9',
+      img: 'https://i.postimg.cc/26B60KrW/brand-6.jpg',
+    },
+    {
+      id: 'brand-10',
+      name: 'Brand 10',
+      img: 'https://i.postimg.cc/9Q3DsVrf/brand-3.jpg',
+    },
+    {
+      id: 'brand-11',
+      name: 'Brand 11',
+      img: 'https://i.postimg.cc/Ls2n6TkK/brand-4.jpg',
+    },
+    {
+      id: 'brand-12',
+      name: 'Brand 12',
+      img: 'https://i.postimg.cc/MHCGkbZL/brand-5.jpg',
+    },
   ],
 };
 

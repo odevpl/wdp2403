@@ -21,6 +21,11 @@
       font-size: 11px;
       color: $brandbar-arrow;
     }
+
+    &:hover {
+      background-color: $brandbar-arrow-hover-bg;
+      border: none;
+    }
   }
 
   .arrowLeft {
@@ -48,6 +53,10 @@
         height: 91px;
         background-size: contain;
       }
+    }
+
+    .noActive {
+      display: none;
     }
   }
 }
