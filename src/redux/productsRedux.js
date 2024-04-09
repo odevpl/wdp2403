@@ -8,6 +8,9 @@ export const getNew = ({ products }) =>
 export const getCompareProducts = ({ products }) =>
   products.filter(product => product.comparision === true);
 
+export const getProductsByFavorite = ({ products }) =>
+  products.filter(product => product.favorite === true);
+
 /* actions */
 const createActionName = actionName => `app/product/${actionName}`;
 const ADD_USER_STARS = createActionName('ADD_USER_STARS');

@@ -11,6 +11,7 @@ import Homepage from './components/views/Homepage/Homepage';
 import ProductList from './components/views/ProductList/ProductList';
 import ProductPage from './components/views/ProductPage/ProductPage';
 import BlogPage from './components/views/BlogPage/BlogPage';
+import FavoritePage from './components/views/FavoritePage/FavoritePage';
 import LoginPage from './components/views/LoginPage/LoginPage';
 
 const App = () => (
@@ -23,6 +24,7 @@ const App = () => (
           <Route exact path={'/product/:productId'} component={ProductPage} />
           <Route exact path={'/blog'} component={BlogPage} />
           <Route exact path={'/product/'} component={ProductPage} />
+          <Route exact path={'/favorite'} component={FavoritePage} />
           <Route exact path={'/login'} component={LoginPage} />
         </Switch>
       </MainLayout>

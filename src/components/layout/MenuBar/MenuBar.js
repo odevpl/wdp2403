@@ -66,6 +66,11 @@ const MenuBar = ({ children }) => {
                   Blog
                 </NavLink>
               </li>
+              <li>
+                <NavLink activeClassName={styles.active} to='/favorite'>
+                  Favorite
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
