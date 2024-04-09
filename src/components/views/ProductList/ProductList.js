@@ -16,13 +16,26 @@ const ProductList = () => {
     <div className={styles.root}>
       <div className='container'>
         <div className={styles.container}>
-          <div>Banner</div>
+          <div className={styles.splash}>
+            <div className={styles.headline}>
+              <span className='col-sm'>
+                BEDROOM <strong>FURNITURE</strong>
+              </span>
+              <p className='col-sm'>
+                ALWAYS <span className={styles.discount}>25% </span> OFF OR MORE
+              </p>
+            </div>
+          </div>
+          <div className={styles.belt}>
+            <span>Home</span> {'>'}{' '}
+            <span className={styles.destination}>Furniture</span>
+          </div>
         </div>
-        <div className={styles.container}>
-          <div className='col-md-9'>
+        <div className={styles.filtersContainer}>
+          <div className='col-md-9 px-0 mt-4'>
             <Furniture categories={allCategories} products={allProducts} />
           </div>
-          <div className='col-md-3'>
+          <div className='col-md-3 mt-5'>
             <div>Filters</div>
             <div>by categories</div>
             <div>by color</div>
