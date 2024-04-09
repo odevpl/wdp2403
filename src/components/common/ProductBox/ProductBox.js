@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styles from './ProductBox.module.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt, faShoppingBasket } from '@fortawesome/free-solid-svg-icons';
-import { faStar as faHeart } from '@fortawesome/free-regular-svg-icons';
+import { faHeart } from '@fortawesome/free-regular-svg-icons';
 import Button from '../Button/Button';
 import Stars from '../Stars/Stars';
 import { Link } from 'react-router-dom/cjs/react-router-dom.min';
@@ -49,10 +49,11 @@ const ProductBox = ({
   useEffect(() => {
     if (localStorage.getItem(`favorite${id}`) === 'true') {
       setLocalFavorite(true);
-    } else if (localStorage.getItem(`favorite${id}`) === 'false') {
-      setLocalFavorite(false);
+    } else if (localStorage.getItem(`favorite${id}`) === 'false' && localFavorite === null) {
+      const randomIndex = Math.floor(Math.random() * 10);
+      setLocalFavorite(randomIndex);
     }
-  }, [id]);
+  }, [id, localFavorite]);
 
   const handleAddToCompare = e => {
     e.preventDefault();
@@ -100,7 +101,9 @@ const ProductBox = ({
       <div className={styles.line}></div>
       <div className={styles.actions}>
         <div className={styles.outlines}>
-          <Button variant='outline' favorite={localFavorite} onClick={favoriteHandle}>
+          <Button variant='outline' favorite={localFavorite} onClick={favoriteHandle}
+            className={localFavorite ? styles.favoriteIcon : ''}
+          >
             <FontAwesomeIcon icon={faHeart}>Favorite</FontAwesomeIcon>
           </Button>
           <Button
