@@ -1,0 +1,187 @@
+@import '../../../styles/settings.scss';
+
+.registerForm {
+  margin: 40px auto;
+  border: 1px solid $registerPage-border;
+  max-width: 600px;
+  padding: 30px;
+
+  .loginRegistration {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    label {
+      margin-left: 7px;
+      font-size: 18px;
+    }
+
+    input {
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      border-radius: 50%;
+      border: 3px solid $registerPage-border;
+      padding: 1.5px;
+      background-clip: content-box;
+      box-sizing: border-box;
+    }
+
+    input:checked {
+      background-color: $registerPage-radio-background;
+    }
+  }
+
+  .dataAccount {
+    margin-top: 55px;
+
+    label {
+      font-size: 16px;
+      font-weight: 600;
+    }
+
+    input {
+      margin-top: 20px;
+      width: 100%;
+      height: 40px;
+      padding-left: 15px;
+      border: 2px solid $registerPage-border;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: $registerPage-border-focus-active;
+    }
+
+    input:active {
+      border-color: $registerPage-border-focus-active;
+    }
+
+    label, input {
+      display: block;
+    }
+  }
+}
+
+.slider {
+  margin-top: 20px;
+}
+
+.sliderSwitch {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  p {
+    margin: 0;
+    margin-left: 15px;
+  }
+
+  input[type=checkbox]{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+  }
+
+  label {
+    cursor: pointer;
+    text-indent: -9999px;
+    width: 40px;
+    height: 20px;
+    background: $registerPage-switch-background;
+    display: block;
+    border-radius: 20px;
+    position: relative;
+    margin: 0;
+    border: 1px solid $registerPage-border;
+  }
+
+  label:after {
+    content: '';
+    position: absolute;
+    bottom: 4px;
+    left: 5px;
+    width: 10px;
+    height: 10px;
+    background: $registerPage-switch-after;
+    border-radius: 6px;
+    transition: 0.15s;
+  }
+
+  input:checked + label {
+    background: $registerPage-switch-after-background;
+  }
+
+  input:checked + label:after {
+    left: calc(100% - 5px);
+    transform: translateX(-100%);
+  }
+
+  label:active:after {
+    width: 20px;
+  }
+}
+
+.consents {
+  margin-top: 20px;
+
+  .consentsInput {
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+
+    input {
+      appearance: none;
+      width: 15px;
+      height: 15px;
+      border: 2px solid $registerPage-consents-checkbox;
+      border-radius: 4px;
+      margin-right: 7px;
+      padding: 1.5px;
+      background-clip: content-box;
+      box-sizing: border-box;
+    }
+
+    input:checked {
+      background-color: $registerPage-consents-checkbox; /* Kolor tła po zaznaczeniu */
+    }
+
+    label {
+      margin: 0;
+      color: $registerPage-consents-select-all;
+    }
+  }
+}
+
+.consents .consentsInput:first-child label {
+  font-weight: 600;
+}
+
+.formNavigation {
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  button {
+    background-color: $registerPage-button-color;
+    width: 200px;
+    height: 50px;
+    border: none;
+    border-radius: 3px;
+
+    &:hover {
+      background-color: $registerPage-button-hover-background;
+      border: 1px solid $registerPage-button-color;
+
+      a {
+        color: $registerPage-button-text-hover;
+      }
+    }
+
+    a {
+      color: $registerPage-button-text;
+      text-decoration: none;
+    }
+  }
+}
